@@ -10,12 +10,12 @@ import Foundation
 typealias Characters = [Character]
 
 // MARK: - Character
-struct Character: Decodable {
+struct Character: Decodable, Identifiable {
     let id: Int
     let name: String
     let description: String
     let thumbnail: CharacterThumbnail
-    let resourceURI: String
+//    let resourceURI: String
 }
 
 // MARK: - CharacterResults

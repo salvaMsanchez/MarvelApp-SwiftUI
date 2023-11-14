@@ -17,8 +17,8 @@ struct Constants {
 
 // MARK: - APIClientProtocol -
 protocol APIClientProtocol {
-    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> CharacterResults
-    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> Series
 }
 
 // MARK: - APIRouter -
@@ -70,7 +70,7 @@ final class APIClient: APIClientProtocol {
     }
     
     // MARK: - Functions -
-    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> CharacterResults {
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
         var components = URLComponents()
         components.host = apiRouter.host
         components.scheme = apiRouter.scheme
@@ -108,10 +108,14 @@ final class APIClient: APIClientProtocol {
             throw APIError.decodingFailed
         }
         
-        return resource
+        if let character = resource.characters.first {
+            return character
+        } else {
+            return .init(id: 0, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))
+        }
     }
     
-    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults {
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> Series {
         var components = URLComponents()
         components.host = apiRouter.host
         components.scheme = apiRouter.scheme
@@ -148,6 +152,46 @@ final class APIClient: APIClientProtocol {
             throw APIError.decodingFailed
         }
         
-        return resource
+        return resource.series
+    }
+}
+
+// MARK: - APIClientFakeSuccess -
+final class APIClientFakeSuccess: APIClientProtocol {
+    // MARK: - APIError -
+    enum APIError: Error {
+        case unknown
+        case malformedUrl
+        case decodingFailed
+        case encodingFailed
+        case noData
+        case statusCode(code: Int?)
+    }
+    
+    // MARK: - Functions -
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
+        let characters: Characters = [
+            .init(id: 1009368, name: "Iron Man", description: "Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55", thumbnailExtension: .jpg)),
+            .init(id: 1009165, name: "Avengers", description: "Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle. With a roster that has included Captain America, Iron Man, Ant-Man, Hulk, Thor, Wasp and dozens more over the years, the Avengers have come to be regarded as Earth's No. 1 team.", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/9/20/5102c774ebae7", thumbnailExtension: .jpg)),
+            .init(id: 1009351, name: "Hulk", description: "Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets.", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0", thumbnailExtension: .jpg)),
+            .init(id: 1009718, name: "Wolverine", description: "Born with super-human senses and the power to heal from almost any wound, Wolverine was captured by a secret Canadian organization and given an unbreakable skeleton and claws. Treated like an animal, it took years for him to control himself. Now, he's a premiere member of both the X-Men and the Avengers.", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/2/60/537bcaef0f6cf", thumbnailExtension: .jpg))
+        ]
+        
+        if let character = characters.randomElement() {
+            return character
+        } else {
+            return .init(id: 0, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))
+        }
+    }
+    
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> Series {
+        let series: Series = [
+            .init(id: 16450, title: "A+X (2012 - 2014)", description: "Get ready for action-packed stories featuring team-ups from your favorite Marvel heroes every month! First, a story where Wolverine and Hulk come together, and then Captain America and Cable meet up! But will each partner's combined strength be enough?", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/d0/511e88a20ae34", thumbnailExtension: "jpg")),
+            .init(id: 454, title: "Amazing Spider-Man (1999 - 2013)", description: "Looking for the one superhero comic you just have to read? You've found it! <i>Amazing Spider-Man</i> is the cornerstone of the Marvel Universe. This is where you'll find all the big-time action, major storylines and iconic Spider-Man magic you'd come to expect from the Wall-Crawler.", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/2/f0/51252718e1c2d", thumbnailExtension: "jpg")),
+            .init(id: 16450, title: "A+X (2012 - 2014)", description: "Get ready for action-packed stories featuring team-ups from your favorite Marvel heroes every month! First, a story where Wolverine and Hulk come together, and then Captain America and Cable meet up! But will each partner's combined strength be enough?", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/5/d0/511e88a20ae34", thumbnailExtension: "jpg")),
+            .init(id: 454, title: "Amazing Spider-Man (1999 - 2013)", description: "Looking for the one superhero comic you just have to read? You've found it! <i>Amazing Spider-Man</i> is the cornerstone of the Marvel Universe. This is where you'll find all the big-time action, major storylines and iconic Spider-Man magic you'd come to expect from the Wall-Crawler.", thumbnail: .init(path: "http://i.annihil.us/u/prod/marvel/i/mg/2/f0/51252718e1c2d", thumbnailExtension: "jpg"))
+        ]
+        
+        return series
     }
 }

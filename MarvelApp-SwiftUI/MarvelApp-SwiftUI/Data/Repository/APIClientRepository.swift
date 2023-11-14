@@ -18,11 +18,11 @@ final class APIClientRepository: APIClientRepositoryProtocol {
     }
     
     // MARK: - Functions -
-    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> CharacterResults {
+    func getCharacter(by characterName: String, apiRouter: APIRouter) async throws -> Character {
         try await apiClient.getCharacter(by: characterName, apiRouter: .getCharacter)
     }
     
-    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> SerieResults {
+    func getSeries(by characterId: Int, apiRouter: APIRouter) async throws -> Series {
         try await apiClient.getSeries(by: characterId, apiRouter: .getSeries(characterId: characterId))
     }
 }
