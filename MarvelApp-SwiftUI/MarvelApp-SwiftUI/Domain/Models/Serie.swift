@@ -9,7 +9,7 @@ import Foundation
 
 typealias Series = [Serie]
 
-struct Serie: Decodable {
+struct Serie: Decodable, Identifiable {
     let id: Int
     let title: String
     let description: String?

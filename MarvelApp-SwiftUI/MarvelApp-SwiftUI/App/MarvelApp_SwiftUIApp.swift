@@ -13,7 +13,8 @@ struct MarvelApp_SwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CharactersView(viewModel: CharactersViewModel(testing: true, useCase: APIClientUseCaseFakeSuccess()))
+            SplashView()
+//            CharactersView(viewModel: CharactersViewModel(testing: false))
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }

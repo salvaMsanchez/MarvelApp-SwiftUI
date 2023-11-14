@@ -25,6 +25,14 @@
 		B41B2CB62B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */; };
 		B41B2CBB2B03B1A8008D57D1 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */; };
 		B41B2CBD2B03B1B5008D57D1 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */; };
+		B4ABA9032B03F70300CB3315 /* CharacterSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */; };
+		B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */; };
+		B4ABA9082B0404C200CB3315 /* marvelSplashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */; };
+		B4ABA90A2B0404F100CB3315 /* marvelCharactersAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ABA9092B0404F100CB3315 /* marvelCharactersAnimation.json */; };
+		B4ABA90D2B04057500CB3315 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B4ABA90C2B04057500CB3315 /* Lottie */; };
+		B4ABA9122B0405B800CB3315 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9112B0405B800CB3315 /* SplashView.swift */; };
+		B4ABA9142B0405C200CB3315 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9132B0405C200CB3315 /* SplashViewModel.swift */; };
+		B4ABA9172B0406AB00CB3315 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9162B0406AB00CB3315 /* LottieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,13 @@
 		B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientRepositoryProtocol.swift; sourceTree = "<group>"; };
 		B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesView.swift; sourceTree = "<group>"; };
+		B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesViewModel.swift; sourceTree = "<group>"; };
+		B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = marvelSplashAnimation.json; sourceTree = "<group>"; };
+		B4ABA9092B0404F100CB3315 /* marvelCharactersAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = marvelCharactersAnimation.json; sourceTree = "<group>"; };
+		B4ABA9112B0405B800CB3315 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		B4ABA9132B0405C200CB3315 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		B4ABA9162B0406AB00CB3315 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4ABA90D2B04057500CB3315 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				B41B2C752B039DB3008D57D1 /* Assets.xcassets */,
+				B4ABA9062B04046B00CB3315 /* Lottie */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -194,7 +211,10 @@
 		B41B2CA02B03A11B008D57D1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B4ABA9152B04069100CB3315 /* GeneralViews */,
+				B4ABA90E2B04059B00CB3315 /* Splash */,
 				B41B2CB72B03B16A008D57D1 /* Characters */,
+				B4ABA8FF2B03F6C800CB3315 /* CharacterSeries */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -290,6 +310,73 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B4ABA8FF2B03F6C800CB3315 /* CharacterSeries */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9012B03F6F000CB3315 /* CharacterSeriesView */,
+				B4ABA9002B03F6E300CB3315 /* CharacterSeriesViewModel */,
+			);
+			path = CharacterSeries;
+			sourceTree = "<group>";
+		};
+		B4ABA9002B03F6E300CB3315 /* CharacterSeriesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */,
+			);
+			path = CharacterSeriesViewModel;
+			sourceTree = "<group>";
+		};
+		B4ABA9012B03F6F000CB3315 /* CharacterSeriesView */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */,
+			);
+			path = CharacterSeriesView;
+			sourceTree = "<group>";
+		};
+		B4ABA9062B04046B00CB3315 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9092B0404F100CB3315 /* marvelCharactersAnimation.json */,
+				B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		B4ABA90E2B04059B00CB3315 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9102B0405AB00CB3315 /* View */,
+				B4ABA90F2B0405A300CB3315 /* ViewModel */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		B4ABA90F2B0405A300CB3315 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9132B0405C200CB3315 /* SplashViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B4ABA9102B0405AB00CB3315 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9112B0405B800CB3315 /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4ABA9152B04069100CB3315 /* GeneralViews */ = {
+			isa = PBXGroup;
+			children = (
+				B4ABA9162B0406AB00CB3315 /* LottieView.swift */,
+			);
+			path = GeneralViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +393,9 @@
 			dependencies = (
 			);
 			name = "MarvelApp-SwiftUI";
+			packageProductDependencies = (
+				B4ABA90C2B04057500CB3315 /* Lottie */,
+			);
 			productName = "MarvelApp-SwiftUI";
 			productReference = B41B2C692B039DB3008D57D1 /* MarvelApp-SwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -378,6 +468,9 @@
 				Base,
 			);
 			mainGroup = B41B2C602B039DB2008D57D1;
+			packageReferences = (
+				B4ABA90B2B04057500CB3315 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = B41B2C6A2B039DB3008D57D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -395,7 +488,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41B2C7A2B039DB3008D57D1 /* Preview Assets.xcassets in Resources */,
+				B4ABA90A2B0404F100CB3315 /* marvelCharactersAnimation.json in Resources */,
 				B41B2C762B039DB3008D57D1 /* Assets.xcassets in Resources */,
+				B4ABA9082B0404C200CB3315 /* marvelSplashAnimation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +516,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41B2CB22B03A28D008D57D1 /* Character.swift in Sources */,
+				B4ABA9122B0405B800CB3315 /* SplashView.swift in Sources */,
+				B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */,
 				B41B2C6D2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift in Sources */,
+				B4ABA9172B0406AB00CB3315 /* LottieView.swift in Sources */,
 				B41B2CBB2B03B1A8008D57D1 /* CharactersView.swift in Sources */,
 				B41B2C6F2B039DB3008D57D1 /* Persistence.swift in Sources */,
 				B41B2C742B039DB3008D57D1 /* ContentView.swift in Sources */,
@@ -429,8 +527,10 @@
 				B41B2CB42B03A2A5008D57D1 /* Serie.swift in Sources */,
 				B41B2CB62B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift in Sources */,
 				B41B2CB02B03A26F008D57D1 /* APIClientUseCase.swift in Sources */,
+				B4ABA9142B0405C200CB3315 /* SplashViewModel.swift in Sources */,
 				B41B2CAE2B03A250008D57D1 /* Extension+URLResponse.swift in Sources */,
 				B41B2C722B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld in Sources */,
+				B4ABA9032B03F70300CB3315 /* CharacterSeriesView.swift in Sources */,
 				B41B2CAA2B03A203008D57D1 /* APIClientRepository.swift in Sources */,
 				B41B2CAC2B03A223008D57D1 /* APIClient.swift in Sources */,
 			);
@@ -784,6 +884,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B4ABA90B2B04057500CB3315 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B4ABA90C2B04057500CB3315 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4ABA90B2B04057500CB3315 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B41B2C702B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld */ = {

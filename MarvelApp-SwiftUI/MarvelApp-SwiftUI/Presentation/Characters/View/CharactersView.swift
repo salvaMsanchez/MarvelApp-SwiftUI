@@ -12,10 +12,17 @@ struct CharactersView: View {
     @StateObject var viewModel: CharactersViewModel
     
     var body: some View {
-        List {
-            ForEach(viewModel.characters) { character in
-                Text(character.name)
+        NavigationStack {
+            List {
+                ForEach(viewModel.characters) { character in
+                    NavigationLink {
+                        CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
+                    } label: {
+                        Text(character.name)
+                    }
+                }
             }
+            .navigationTitle("Marvel Heroes")
         }
     }
 }
