@@ -27,7 +27,7 @@ final class CharactersViewModel: ObservableObject {
     let useCase: APIClientUseCaseProtocol
     
     // MARK: - Initializers -
-    init(testing: Bool, useCase: APIClientUseCaseProtocol = APIClientUseCase()) {
+    init(testing: Bool = false, useCase: APIClientUseCaseProtocol = APIClientUseCase()) {
         self.useCase = useCase
         
         if testing {
