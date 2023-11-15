@@ -13,16 +13,32 @@ struct CharactersView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.characters) { character in
-                    NavigationLink {
-                        CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
-                    } label: {
-                        Text(character.name)
+            ZStack {
+                List {
+                    ForEach(viewModel.characters) { character in
+                        NavigationLink {
+                            CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
+                                .navigationTitle("\(character.name) Series")
+                                .navigationBarTitleDisplayMode(.inline)
+                        } label: {
+                            Text(character.name)
+                        }
                     }
+                }
+                switch viewModel.status {
+                    case .loading:
+                        let _ = print("Estado Characters .loading")
+                        LoadingView()
+                    case .loaded:
+                        let _ = print("Estado Characters .loaded")
+                    case .none:
+                        let _ = print("Estado Characters .none")
+                    case .error:
+                        let _ = print("Estado Characters .error")
                 }
             }
             .navigationTitle("Marvel Heroes")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

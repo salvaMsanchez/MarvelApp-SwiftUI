@@ -36,6 +36,7 @@
 		B4B766822B0544100096544D /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766812B0544100096544D /* RouteView.swift */; };
 		B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766832B05441D0096544D /* RouteViewModel.swift */; };
 		B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766852B0545A50096544D /* RoutingStatus.swift */; };
+		B4B766882B0559A00096544D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766872B0559A00096544D /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		B4B766812B0544100096544D /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		B4B766832B05441D0096544D /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
 		B4B766852B0545A50096544D /* RoutingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingStatus.swift; sourceTree = "<group>"; };
+		B4B766872B0559A00096544D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				B4ABA9162B0406AB00CB3315 /* LottieView.swift */,
+				B4B766872B0559A00096544D /* LoadingView.swift */,
 			);
 			path = GeneralViews;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				B41B2CB22B03A28D008D57D1 /* Character.swift in Sources */,
 				B4ABA9122B0405B800CB3315 /* SplashView.swift in Sources */,
 				B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */,
+				B4B766882B0559A00096544D /* LoadingView.swift in Sources */,
 				B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */,
 				B4B766822B0544100096544D /* RouteView.swift in Sources */,
 				B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */,

@@ -12,10 +12,24 @@ struct CharacterSeriesView: View {
     @StateObject var viewModel: CharacterSeriesViewModel
     
     var body: some View {
-        List {
-            ForEach(viewModel.series) { serie in
-                Text(serie.title)
+        ZStack {
+            List {
+                ForEach(viewModel.series) { serie in
+                    Text(serie.title)
+                }
             }
+            switch viewModel.status {
+                case .loading:
+                    let _ = print("Estado Series .loading")
+                    LoadingView()
+                case .loaded:
+                    let _ = print("Estado Series .loaded")
+                case .none:
+                    let _ = print("Estado Series .none")
+                case .error:
+                    let _ = print("Estado Series .error")
+            }
+            
         }
     }
 }

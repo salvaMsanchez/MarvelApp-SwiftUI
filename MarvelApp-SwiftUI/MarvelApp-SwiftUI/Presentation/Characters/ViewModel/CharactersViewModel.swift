@@ -18,10 +18,17 @@ let charactersToUse: [String] = ["Iron Man",
                                 "Wonder Man",
                                 "X-Men"]
 
+// MARK: - CharactersViewStatus -
+enum CharactersViewStatus {
+    case none, loading, loaded, error
+}
+
+// MARK: - CharactersViewModel -
 final class CharactersViewModel: ObservableObject {
     // MARK: - Properties -
     let listCharacters: [String] = charactersToUse
     @Published var characters: Characters = []
+    @Published var status: CharactersViewStatus = .none
     
     // MARK: - Use Case -
     let useCase: APIClientUseCaseProtocol
@@ -39,7 +46,7 @@ final class CharactersViewModel: ObservableObject {
     
     // MARK: - Functions -
     func loadCharacters() {
-//        state = .loading
+        status = .loading
 
         DispatchQueue.global().async { [weak self] in
             let dispatchGroup = DispatchGroup()
@@ -61,14 +68,16 @@ final class CharactersViewModel: ObservableObject {
                     }
                 }
             }
-            dispatchGroup.notify(queue: .main) {
-//                self?.state = .loaded
+            dispatchGroup.notify(queue: .main) { [weak self] in
+                self?.status = .loaded
                 print("Héroes cargados")
             }
         }
     }
     
     func loadCharactersTesting() {
+        status = .loading
+        
         for _ in 1...5 {
             Task.init { [weak self] in
                 do {
@@ -83,5 +92,7 @@ final class CharactersViewModel: ObservableObject {
                 }
             }
         }
+        
+        status = .loaded
     }
 }

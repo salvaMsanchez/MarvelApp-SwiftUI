@@ -7,10 +7,17 @@
 
 import Foundation
 
+// MARK: - CharactersViewStatus -
+enum CharactersSeriesViewStatus {
+    case none, loading, loaded, error
+}
+
+// MARK: - CharacterSeriesViewModel -
 final class CharacterSeriesViewModel: ObservableObject {
     // MARK: - Properties -
     @Published var series: Series = []
     var character: Character
+    @Published var status: CharactersSeriesViewStatus = .none
     
     // MARK: - Use Case -
     let useCase: APIClientUseCaseProtocol
@@ -29,7 +36,8 @@ final class CharacterSeriesViewModel: ObservableObject {
     
     // MARK: - Functions -
     func loadSeries() {
-//        state = .loading
+        status = .loading
+        
         DispatchQueue.global().async {
             Task.init { [weak self] in
                 do {
@@ -43,8 +51,8 @@ final class CharacterSeriesViewModel: ObservableObject {
                     
                     DispatchQueue.main.async { [weak self] in
                         self?.series = seriesFiltered
+                        self?.status = .loaded
                     }
-//                    self?.state = .loaded
                 } catch {
                     print(error)
                 }
@@ -61,8 +69,8 @@ final class CharacterSeriesViewModel: ObservableObject {
                 
                 DispatchQueue.main.async { [weak self] in
                     self?.series = series
+                    self?.status = .loaded
                 }
-//                    self?.state = .loaded
             } catch {
                 print(error)
             }
