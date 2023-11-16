@@ -79,6 +79,7 @@
 		B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientRepositoryProtocol.swift; sourceTree = "<group>"; };
 		B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		B4903A0D2B0675B100FCDACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesView.swift; sourceTree = "<group>"; };
 		B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesViewModel.swift; sourceTree = "<group>"; };
 		B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = marvelSplashAnimation.json; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 		B41B2C6B2B039DB3008D57D1 /* MarvelApp-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				B4903A0D2B0675B100FCDACE /* Info.plist */,
 				B41B2C9C2B03A0D1008D57D1 /* App */,
 				B41B2C9D2B03A0F3008D57D1 /* Resources */,
 				B41B2C9E2B03A10F008D57D1 /* Data */,
@@ -731,6 +733,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MarvelApp-SwiftUI/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -769,6 +772,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MarvelApp-SwiftUI/Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

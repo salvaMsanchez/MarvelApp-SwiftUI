@@ -28,6 +28,7 @@ final class CharactersViewModel: ObservableObject {
     // MARK: - Properties -
     let listCharacters: [String] = charactersToUse
     @Published var characters: Characters = []
+    @Published var favoritesCharacters: Characters = []
     @Published var status: CharactersViewStatus = .none
     
     // MARK: - Use Case -

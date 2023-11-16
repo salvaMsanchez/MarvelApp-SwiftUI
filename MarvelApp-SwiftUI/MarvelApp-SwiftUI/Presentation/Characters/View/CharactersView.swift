@@ -14,14 +14,64 @@ struct CharactersView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                List {
-                    ForEach(viewModel.characters) { character in
-                        NavigationLink {
-                            CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
-                                .navigationTitle("\(character.name) Series")
-                                .navigationBarTitleDisplayMode(.inline)
-                        } label: {
-                            Text(character.name)
+                VStack {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 12) {
+                            ForEach(viewModel.characters) { character in
+                                let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
+                                NavigationLink {
+                                    Text(character.name)
+                                } label: {
+                                    VStack {
+                                        AsyncImage(url: URL(string: characterPhoto)) { photo in
+                                            photo
+                                                .resizable()
+                                                .frame(width: 116, height: 150)
+                                                .cornerRadius(20)
+                                        } placeholder: {
+                                            ZStack {
+                                                RoundedRectangle(cornerRadius: 20)
+                                                    .frame(width: 100, height: 150)
+                                                    .foregroundColor(.gray)
+                                                Image(systemName: "person")
+                                                    .resizable()
+                                                    .frame(width: 50, height: 50)
+                                                    .padding()
+                                            }
+                                        }
+                                        Text(character.name)
+                                            .bold()
+                                            .frame(width: 100, alignment: .leading)
+                                            .lineLimit(1)
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                            }
+                        }
+                        .padding([.leading, .trailing], 16)
+                        .background(.blue)
+                    }
+                    .frame(height: 200)
+                    .background(.red)
+                    List {
+                        ForEach(viewModel.characters) { character in
+                            ZStack {
+                                NavigationLink {
+                                    CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
+                                        .navigationTitle("\(character.name) Series")
+                                        .navigationBarTitleDisplayMode(.inline)
+                                } label: {
+                                    
+                                }
+                                .opacity(0.0)
+                                .buttonStyle(PlainButtonStyle())
+                                HStack {
+                                    Text(character.name)
+                                        .font(.body)
+                                    Spacer()
+                                }
+                            }
                         }
                     }
                 }
