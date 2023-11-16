@@ -14,67 +14,100 @@ struct CharactersView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                VStack {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 12) {
-                            ForEach(viewModel.characters) { character in
-                                let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
-                                NavigationLink {
-                                    Text(character.name)
-                                } label: {
+                List {
+                    Section {
+                        if viewModel.favoritesCharacters.isEmpty {
+                            Rectangle()
+                                .frame(height: 200)
+                                .foregroundColor(.gray)
+                                .overlay(
                                     VStack {
-                                        AsyncImage(url: URL(string: characterPhoto)) { photo in
-                                            photo
-                                                .resizable()
-                                                .frame(width: 116, height: 150)
-                                                .cornerRadius(20)
-                                        } placeholder: {
-                                            ZStack {
-                                                RoundedRectangle(cornerRadius: 20)
-                                                    .frame(width: 100, height: 150)
-                                                    .foregroundColor(.gray)
-                                                Image(systemName: "person")
-                                                    .resizable()
-                                                    .frame(width: 50, height: 50)
-                                                    .padding()
+                                        Image(systemName: "heart.slash.fill")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                            .foregroundColor(.black)
+                                        Text("No favorite characters saved yet")
+                                    }
+                                )
+                        } else {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(spacing: 12) {
+                                    ForEach(viewModel.characters) { character in
+                                        let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
+                                        NavigationLink {
+                                            Text(character.name)
+                                        } label: {
+                                            VStack {
+                                                AsyncImage(url: URL(string: characterPhoto)) { photo in
+                                                    photo
+                                                        .resizable()
+                                                        .frame(width: 116, height: 150)
+                                                        .cornerRadius(20)
+                                                } placeholder: {
+                                                    ZStack {
+                                                        RoundedRectangle(cornerRadius: 20)
+                                                            .frame(width: 100, height: 150)
+                                                            .foregroundColor(.gray)
+                                                        Image(systemName: "person")
+                                                            .resizable()
+                                                            .frame(width: 50, height: 50)
+                                                            .padding()
+                                                            .foregroundColor(.black)
+                                                    }
+                                                }
+                                                Text(character.name)
+                                                    .bold()
+                                                    .frame(width: 100, alignment: .leading)
+                                                    .lineLimit(1)
+                                                    .font(.system(size: 14))
+                                                    .foregroundColor(.white)
                                             }
                                         }
-                                        Text(character.name)
-                                            .bold()
-                                            .frame(width: 100, alignment: .leading)
-                                            .lineLimit(1)
-                                            .font(.system(size: 14))
-                                            .foregroundColor(.white)
                                     }
                                 }
+                                .padding([.leading, .trailing], 16)
+                                .background(.blue)
                             }
+                            .frame(height: 200)
+                            .background(.red)
                         }
-                        .padding([.leading, .trailing], 16)
-                        .background(.blue)
                     }
-                    .frame(height: 200)
-                    .background(.red)
-                    List {
-                        ForEach(viewModel.characters) { character in
-                            ZStack {
-                                NavigationLink {
-                                    CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
-                                        .navigationTitle("\(character.name) Series")
-                                        .navigationBarTitleDisplayMode(.inline)
-                                } label: {
-                                    
-                                }
-                                .opacity(0.0)
-                                .buttonStyle(PlainButtonStyle())
-                                HStack {
-                                    Text(character.name)
-                                        .font(.body)
-                                    Spacer()
+                    .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: -20,trailing: 0))
+                    ForEach(viewModel.characters) { character in
+                        let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
+                        ZStack {
+                            NavigationLink {
+                                CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
+                                    .navigationTitle("\(character.name) Series")
+                                    .navigationBarTitleDisplayMode(.inline)
+                            } label: {
+                                
+                            }
+                            .opacity(0.0)
+                            .buttonStyle(PlainButtonStyle())
+                            HStack {
+                                AsyncImage(url: URL(string: characterPhoto)) { photo in
+                                    photo
+                                        .resizable()
+                                        .frame(width: .infinity, height: 275)
+                                        .cornerRadius(20)
+                                } placeholder: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .frame(width: .infinity, height: 275)
+                                            .foregroundColor(.gray)
+                                        Image(systemName: "person")
+                                            .resizable()
+                                            .frame(width: 100, height: 100)
+                                            .padding()
+                                            .foregroundColor(.black)
+                                    }
                                 }
                             }
                         }
                     }
                 }
+                .listStyle(.grouped)
                 switch viewModel.status {
                     case .loading:
                         let _ = print("Estado Characters .loading")
@@ -88,7 +121,7 @@ struct CharactersView: View {
                 }
             }
             .navigationTitle("Marvel Heroes")
-            .navigationBarTitleDisplayMode(.inline)
+//            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -98,3 +131,96 @@ struct CharactersView_Previews: PreviewProvider {
         CharactersView(viewModel: CharactersViewModel(testing: true, useCase: APIClientUseCaseFakeSuccess()))
     }
 }
+
+//VStack {
+//    if viewModel.favoritesCharacters.isEmpty {
+//        Rectangle()
+//            .frame(height: 200)
+//            .foregroundColor(.gray)
+//            .overlay(
+//                VStack {
+//                    Image(systemName: "heart.slash.fill")
+//                        .resizable()
+//                        .frame(width: 50, height: 50)
+//                        .foregroundColor(.black)
+//                    Text("No favorite characters saved yet")
+//                }
+//            )
+//    } else {
+//        ScrollView(.horizontal, showsIndicators: false) {
+//            LazyHStack(spacing: 12) {
+//                ForEach(viewModel.characters) { character in
+//                    let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
+//                    NavigationLink {
+//                        Text(character.name)
+//                    } label: {
+//                        VStack {
+//                            AsyncImage(url: URL(string: characterPhoto)) { photo in
+//                                photo
+//                                    .resizable()
+//                                    .frame(width: 116, height: 150)
+//                                    .cornerRadius(20)
+//                            } placeholder: {
+//                                ZStack {
+//                                    RoundedRectangle(cornerRadius: 20)
+//                                        .frame(width: 100, height: 150)
+//                                        .foregroundColor(.gray)
+//                                    Image(systemName: "person")
+//                                        .resizable()
+//                                        .frame(width: 50, height: 50)
+//                                        .padding()
+//                                        .foregroundColor(.black)
+//                                }
+//                            }
+//                            Text(character.name)
+//                                .bold()
+//                                .frame(width: 100, alignment: .leading)
+//                                .lineLimit(1)
+//                                .font(.system(size: 14))
+//                                .foregroundColor(.white)
+//                        }
+//                    }
+//                }
+//            }
+//            .padding([.leading, .trailing], 16)
+//            .background(.blue)
+//        }
+//        .frame(height: 200)
+//        .background(.red)
+//    }
+//    List {
+//        ForEach(viewModel.characters) { character in
+//            let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
+//            ZStack {
+//                NavigationLink {
+//                    CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
+//                        .navigationTitle("\(character.name) Series")
+//                        .navigationBarTitleDisplayMode(.inline)
+//                } label: {
+//
+//                }
+//                .opacity(0.0)
+//                .buttonStyle(PlainButtonStyle())
+//                HStack {
+//                    AsyncImage(url: URL(string: characterPhoto)) { photo in
+//                        photo
+//                            .resizable()
+//                            .frame(width: .infinity, height: 300)
+//                            .cornerRadius(20)
+//                    } placeholder: {
+//                        ZStack {
+//                            RoundedRectangle(cornerRadius: 20)
+//                                .frame(width: 100, height: 150)
+//                                .foregroundColor(.gray)
+//                            Image(systemName: "person")
+//                                .resizable()
+//                                .frame(width: 50, height: 50)
+//                                .padding()
+//                                .foregroundColor(.black)
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}

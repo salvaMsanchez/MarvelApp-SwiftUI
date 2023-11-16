@@ -28,7 +28,7 @@ final class CharactersViewModel: ObservableObject {
     // MARK: - Properties -
     let listCharacters: [String] = charactersToUse
     @Published var characters: Characters = []
-    @Published var favoritesCharacters: Characters = []
+    @Published var favoritesCharacters: Characters = [.init(id: 0, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))]
     @Published var status: CharactersViewStatus = .none
     
     // MARK: - Use Case -
