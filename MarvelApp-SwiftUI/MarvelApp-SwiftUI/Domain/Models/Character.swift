@@ -16,6 +16,7 @@ struct Character: Decodable, Identifiable {
     let description: String
     let thumbnail: CharacterThumbnail
 //    let resourceURI: String
+    var favorite: Bool?
 }
 
 // MARK: - CharacterResults

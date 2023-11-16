@@ -46,6 +46,19 @@ final class CharactersViewModel: ObservableObject {
     }
     
     // MARK: - Functions -
+    func toggleCharacterFavoriteStatus(index: Int) {
+        switch characters[index].favorite {
+            case nil:
+                characters[index].favorite = true
+            case true:
+                characters[index].favorite = false
+            case false:
+                characters[index].favorite = true
+            default:
+                break
+        }
+    }
+    
     func loadCharacters() {
         status = .loading
 

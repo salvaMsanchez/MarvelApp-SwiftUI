@@ -41,12 +41,13 @@ struct CharactersView: View {
                                                 AsyncImage(url: URL(string: characterPhoto)) { photo in
                                                     photo
                                                         .resizable()
-                                                        .frame(width: 116, height: 150)
+                                                        .scaledToFill()
+                                                        .frame(width: 120, height: 150)
                                                         .cornerRadius(20)
                                                 } placeholder: {
                                                     ZStack {
                                                         RoundedRectangle(cornerRadius: 20)
-                                                            .frame(width: 100, height: 150)
+                                                            .frame(width: 120, height: 150)
                                                             .foregroundColor(.gray)
                                                         Image(systemName: "person")
                                                             .resizable()
@@ -73,7 +74,7 @@ struct CharactersView: View {
                         }
                     }
                     .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: -20,trailing: 0))
-                    ForEach(viewModel.characters) { character in
+                    ForEach(Array(viewModel.characters.enumerated()), id: \.element.id) { index, character in
                         let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                         ZStack {
                             NavigationLink {
@@ -91,6 +92,43 @@ struct CharactersView: View {
                                         .resizable()
                                         .frame(width: .infinity, height: 275)
                                         .cornerRadius(20)
+                                        .overlay(
+                                            ZStack {
+                                                LinearGradient(gradient: Gradient(colors: [.clear, .clear, .clear, .black.opacity(0.8)]), startPoint: .bottom, endPoint: .top)
+                                                .cornerRadius(20)
+                                                VStack {
+                                                    HStack {
+                                                        Text(character.name)
+                                                            .font(.title)
+                                                            .foregroundColor(.white)
+                                                            .bold()
+                                                        Spacer()
+                                                        Button {
+                                                            //action
+                                                        } label: {
+                                                            if let isFavorite: Bool = character.favorite {
+                                                                Image(systemName: isFavorite ? "heart.fill" : "heart")
+                                                                    .resizable()
+                                                                    .scaledToFill()
+                                                                    .frame(width: 28, height: 28)
+                                                                    .foregroundColor(.white)
+                                                            } else {
+                                                                Image(systemName: "heart")
+                                                                    .resizable()
+                                                                    .scaledToFill()
+                                                                    .frame(width: 28, height: 28)
+                                                                    .foregroundColor(.white)
+                                                            }
+                                                        }
+                                                        .onTapGesture {
+                                                            viewModel.toggleCharacterFavoriteStatus(index: index)
+                                                        }
+                                                    }
+                                                    .padding()
+                                                    Spacer()
+                                                }
+                                            }
+                                        )
                                 } placeholder: {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 20)
@@ -107,6 +145,7 @@ struct CharactersView: View {
                         }
                     }
                 }
+                .scrollIndicators(.hidden)
                 .listStyle(.grouped)
                 switch viewModel.status {
                     case .loading:
