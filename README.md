@@ -107,6 +107,9 @@ Se han implementado llamadas asíncronas utilizando las funciones `async` y `awa
 
 * Separar vistas en subvistas para más organización
 * Comentar código
+* Adaptación a SmartWatch
+* Dirigir a SeriesView desde Favoritos
+* Test
 
 # NOTAS SOBRE QUÉ ESCRIBIR
 
