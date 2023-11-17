@@ -65,39 +65,52 @@ final class CharactersViewModel: ObservableObject {
         status = .loading
         
         let charactersSavedOnCoreData: Characters = fetchingCharactersCoreData()
-        charactersSavedOnCoreData.forEach { character in
-            print("------")
-            print(character)
-            print("------")
-        }
         print("CONTADOR EN COREDATA -> \(charactersSavedOnCoreData.count)")
-
-        DispatchQueue.global().async { [weak self] in
-            let dispatchGroup = DispatchGroup()
-            self?.listCharacters.forEach { nameCharacter in
-                dispatchGroup.enter()
-                Task.init { [weak self] in
-                    defer {
-                        dispatchGroup.leave()
-                    }
-                    do {
-                        guard let character = try await self?.useCase.getCharacter(by: nameCharacter, apiRouter: .getCharacter) else {
-                            return
-                        }
-                        DispatchQueue.main.async { [weak self] in
-                            self?.characters.append(character)
-                        }
-                    } catch {
-                        print(error)
+        
+        if charactersSavedOnCoreData.count > 0 {
+            defer {
+                DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+                    DispatchQueue.main.async {
+                        self?.status = .loaded
                     }
                 }
             }
-            dispatchGroup.notify(queue: .main) { [weak self] in
-                self?.status = .loaded
-                print("Héroes cargados")
-                self?.saveCharactersCoreData()
+            characters = charactersSavedOnCoreData
+//            print("!!!!!!!!!!!!!")
+//            print("!!!!!!!!!!!!!")
+//            print(characters)
+//            print("!!!!!!!!!!!!!")
+//            print("!!!!!!!!!!!!!")
+        } else {
+            DispatchQueue.global().async { [weak self] in
+                let dispatchGroup = DispatchGroup()
+                self?.listCharacters.forEach { nameCharacter in
+                    dispatchGroup.enter()
+                    Task.init { [weak self] in
+                        defer {
+                            dispatchGroup.leave()
+                        }
+                        do {
+                            guard let character = try await self?.useCase.getCharacter(by: nameCharacter, apiRouter: .getCharacter) else {
+                                return
+                            }
+                            DispatchQueue.main.async { [weak self] in
+                                self?.characters.append(character)
+                            }
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+                dispatchGroup.notify(queue: .main) { [weak self] in
+                    self?.status = .loaded
+                    print("Héroes cargados")
+                    self?.saveCharactersCoreData()
+                }
             }
         }
+
+        
     }
     
     func fetchingCharactersCoreData() -> Characters {

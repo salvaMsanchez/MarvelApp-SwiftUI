@@ -15,9 +15,9 @@ struct CharacterMapper {
             return nil
         }
         
-        let thumbnailSplitted = thumbnail.split(separator: ".")
-        let thumbnailPath: String = String(thumbnailSplitted[0])
-        let thumbnailExtension: String = String(thumbnailSplitted[1])
+        let components = thumbnail.split(separator: ".")
+        let thumbnailPath = components.dropLast().joined(separator: ".")
+        let thumbnailExtension = components.last ?? ""
         
         return Character(id: Int(characterDAO.id), name: name, description: description, thumbnail: .init(path: thumbnailPath, thumbnailExtension: thumbnailExtension.elementsEqual("gif") ? .gif : .jpg), favorite: characterDAO.favorite)
     }

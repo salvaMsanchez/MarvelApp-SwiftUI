@@ -32,7 +32,7 @@ final class DataPersistanceManager: DataPersistanceManagerProtocol {
             item.id = Int64(character.id)
             item.name = character.name
             item.characterDescription = character.description
-            item.thumbnail = character.thumbnail.path + character.thumbnail.thumbnailExtension.rawValue
+            item.thumbnail = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
             if let characterFavorite = character.favorite {
                 item.favorite = characterFavorite
             }
