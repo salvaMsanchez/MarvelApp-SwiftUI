@@ -12,6 +12,7 @@ protocol DataPersistanceManagerUseCaseProtocol {
     var repository: DataPersistanceManagerRepositoryProtocol { get set }
     func saveCharacter(characters: Characters, completion: @escaping (Result<Void, DataBaseError>) -> Void)
     func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void)
+    func updateFavorite(thisCharacter character: Character, to isFavorite: Bool, completion: @escaping (Result<Void, DataBaseError>) -> Void)
 }
 
 // MARK: - DataPersistanceManagerUseCase -
@@ -31,5 +32,9 @@ final class DataPersistanceManagerUseCase: DataPersistanceManagerUseCaseProtocol
     
     func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void) {
         repository.fetchingCharacters(completion: completion)
+    }
+    
+    func updateFavorite(thisCharacter character: Character, to isFavorite: Bool, completion: @escaping (Result<Void, DataBaseError>) -> Void) {
+        repository.updateFavorite(thisCharacter: character, to: isFavorite, completion: completion)
     }
 }

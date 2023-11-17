@@ -11,4 +11,5 @@ import Foundation
 protocol DataPersistanceManagerRepositoryProtocol {
     func saveCharacter(characters: Characters, completion: @escaping (Result<Void, DataBaseError>) -> Void)
     func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void)
+    func updateFavorite(thisCharacter character: Character, to isFavorite: Bool, completion: @escaping (Result<Void, DataBaseError>) -> Void)
 }

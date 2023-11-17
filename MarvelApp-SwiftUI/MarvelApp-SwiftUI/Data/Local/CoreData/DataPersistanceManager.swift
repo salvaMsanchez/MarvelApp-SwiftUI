@@ -12,12 +12,14 @@ import CoreData
 protocol DataPersistanceManagerProtocol {
     func saveCharacter(characters: Characters, completion: @escaping (Result<Void, DataBaseError>) -> Void)
     func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void)
+    func updateFavorite(thisCharacter character: Character, to isFavorite: Bool, completion: @escaping (Result<Void, DataBaseError>) -> Void)
 }
 
 // MARK: - DataBaseError -
 enum DataBaseError: Error {
     case failedToSaveData
     case failedToFetchCharacters
+    case failedToUpdateFavorite
 }
 
 // MARK: - DataPersistanceManager -
@@ -43,6 +45,25 @@ final class DataPersistanceManager: DataPersistanceManagerProtocol {
             } catch {
                 completion(.failure(.failedToSaveData))
             }
+        }
+    }
+    
+    func updateFavorite(thisCharacter character: Character, to isFavorite: Bool, completion: @escaping (Result<Void, DataBaseError>) -> Void) {
+        let context = PersistenceController.shared.container.viewContext
+        
+        let request: NSFetchRequest<CharacterDAO>
+        request = CharacterDAO.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@", character.name)
+        
+        do {
+            let charactersDAO = try context.fetch(request)
+            if let character = charactersDAO.first {
+                character.favorite = isFavorite
+                try context.save()
+                completion(.success(()))
+            }
+        } catch {
+            completion(.failure(.failedToUpdateFavorite))
         }
     }
     

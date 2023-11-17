@@ -25,4 +25,8 @@ final class DataPersistanceManagerRepository: DataPersistanceManagerRepositoryPr
     func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void) {
         dataPersistanceManager.fetchingCharacters(completion: completion)
     }
+    
+    func updateFavorite(thisCharacter character: Character, to isFavorite: Bool, completion: @escaping (Result<Void, DataBaseError>) -> Void) {
+        dataPersistanceManager.updateFavorite(thisCharacter: character, to: isFavorite, completion: completion)
+    }
 }

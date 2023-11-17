@@ -28,7 +28,11 @@ final class CharactersViewModel: ObservableObject {
     // MARK: - Properties -
     let listCharacters: [String] = charactersToUse
     @Published var characters: Characters = []
-    @Published var favoritesCharacters: Characters = [.init(id: 0, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))]
+    var favoritesCharacters: Characters {
+        return characters.filter { character in
+            character.favorite == true
+        }
+    }
     @Published var status: CharactersViewStatus = .none
     
     // MARK: - Use Case -
@@ -49,6 +53,7 @@ final class CharactersViewModel: ObservableObject {
     
     // MARK: - Functions -
     func toggleCharacterFavoriteStatus(index: Int) {
+        // Cambio lista actual ViewModel
         switch characters[index].favorite {
             case nil:
                 characters[index].favorite = true
@@ -58,6 +63,28 @@ final class CharactersViewModel: ObservableObject {
                 characters[index].favorite = true
             default:
                 break
+        }
+        
+        // Cambio en CoreData
+        guard let characterFavorite = characters[index].favorite else { return }
+        if characterFavorite {
+            coreDataUseCase.updateFavorite(thisCharacter: characters[index], to: true) { result in
+                switch result {
+                    case .success():
+                        break
+                    case .failure(let error):
+                        print(error)
+                }
+            }
+        } else {
+            coreDataUseCase.updateFavorite(thisCharacter: characters[index], to: false) { result in
+                switch result {
+                    case .success():
+                        break
+                    case .failure(let error):
+                        print(error)
+                }
+            }
         }
     }
     
@@ -76,11 +103,11 @@ final class CharactersViewModel: ObservableObject {
                 }
             }
             characters = charactersSavedOnCoreData
-//            print("!!!!!!!!!!!!!")
-//            print("!!!!!!!!!!!!!")
-//            print(characters)
-//            print("!!!!!!!!!!!!!")
-//            print("!!!!!!!!!!!!!")
+            print("!!!!!!!!!!!!!")
+            print("!!!!!!!!!!!!!")
+            print(characters)
+            print("!!!!!!!!!!!!!")
+            print("!!!!!!!!!!!!!")
         } else {
             DispatchQueue.global().async { [weak self] in
                 let dispatchGroup = DispatchGroup()

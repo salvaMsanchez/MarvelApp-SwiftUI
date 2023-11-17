@@ -32,7 +32,7 @@ struct CharactersView: View {
                         } else {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack(spacing: 12) {
-                                    ForEach(viewModel.characters) { character in
+                                    ForEach(viewModel.favoritesCharacters) { character in
                                         let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                                         NavigationLink {
                                             Text(character.name)
