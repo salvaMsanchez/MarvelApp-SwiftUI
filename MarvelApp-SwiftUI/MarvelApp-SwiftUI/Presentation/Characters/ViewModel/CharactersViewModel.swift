@@ -33,10 +33,12 @@ final class CharactersViewModel: ObservableObject {
     
     // MARK: - Use Case -
     let useCase: APIClientUseCaseProtocol
+    let coreDataUseCase: DataPersistanceManagerUseCaseProtocol
     
     // MARK: - Initializers -
-    init(testing: Bool = false, useCase: APIClientUseCaseProtocol = APIClientUseCase()) {
+    init(testing: Bool = false, useCase: APIClientUseCaseProtocol = APIClientUseCase(), coreDataUseCase: DataPersistanceManagerUseCaseProtocol = DataPersistanceManagerUseCase()) {
         self.useCase = useCase
+        self.coreDataUseCase = coreDataUseCase
         
         if testing {
             loadCharactersTesting()
@@ -85,6 +87,19 @@ final class CharactersViewModel: ObservableObject {
             dispatchGroup.notify(queue: .main) { [weak self] in
                 self?.status = .loaded
                 print("Héroes cargados")
+                self?.saveCharactersCoreData()
+            }
+        }
+    }
+    
+    func saveCharactersCoreData() {
+        coreDataUseCase.saveCharacter(characters: characters) { result in
+            switch result {
+                case .success():
+                    print("Héroes guardados en CoreData")
+                    break
+                case .failure(let error):
+                    print(error)
             }
         }
     }

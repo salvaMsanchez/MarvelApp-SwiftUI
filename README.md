@@ -103,6 +103,11 @@ He empleado el *framework* **Combine** para gestionar flujos de datos asíncrono
 
 Se han implementado llamadas asíncronas utilizando las funciones `async` y `await`. Esta característica, introducida en ***Swift 5.5***, me ha posibilitado **simplificar la escritura** de código asíncrono al permitir que las funciones asíncronas se vean y se utilicen de manera similar a las funciones síncronas. Además, al emplear `async/await`, las operaciones asíncronas se desarrollan de manera más clara y concisa, mejorando la legibilidad del código.
 
+# TODO
+
+* Separar vistas en subvistas para más organización
+* Comentar código
+
 # NOTAS SOBRE QUÉ ESCRIBIR
 
 * [iOS 16 not responding to changes in section spacing](https://www.reddit.com/r/SwiftUI/comments/xia4sv/ios_16_not_responding_to_changes_in_section/?rdt=63091)

@@ -25,6 +25,10 @@
 		B41B2CB62B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */; };
 		B41B2CBB2B03B1A8008D57D1 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */; };
 		B41B2CBD2B03B1B5008D57D1 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */; };
+		B495D32A2B07CA760004CB53 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */; };
+		B495D32C2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */; };
+		B495D32E2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */; };
+		B495D3302B07CF970004CB53 /* DataPersistanceManagerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */; };
 		B4ABA9032B03F70300CB3315 /* CharacterSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */; };
 		B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */; };
 		B4ABA9082B0404C200CB3315 /* marvelSplashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */; };
@@ -80,6 +84,10 @@
 		B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		B4903A0D2B0675B100FCDACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
+		B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerUseCase.swift; sourceTree = "<group>"; };
+		B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerRepositoryProtocol.swift; sourceTree = "<group>"; };
+		B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerRepository.swift; sourceTree = "<group>"; };
 		B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesView.swift; sourceTree = "<group>"; };
 		B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesViewModel.swift; sourceTree = "<group>"; };
 		B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = marvelSplashAnimation.json; sourceTree = "<group>"; };
@@ -242,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				B41B2CA92B03A203008D57D1 /* APIClientRepository.swift */,
+				B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -250,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */,
+				B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -268,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				B41B2CAF2B03A26F008D57D1 /* APIClientUseCase.swift */,
+				B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -293,6 +304,7 @@
 			children = (
 				B41B2C6E2B039DB3008D57D1 /* Persistence.swift */,
 				B41B2C702B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld */,
+				B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -553,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B495D32A2B07CA760004CB53 /* DataPersistanceManager.swift in Sources */,
 				B41B2CB22B03A28D008D57D1 /* Character.swift in Sources */,
 				B4ABA9122B0405B800CB3315 /* SplashView.swift in Sources */,
 				B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */,
@@ -563,9 +576,11 @@
 				B41B2C6D2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift in Sources */,
 				B4ABA9172B0406AB00CB3315 /* LottieView.swift in Sources */,
 				B41B2CBB2B03B1A8008D57D1 /* CharactersView.swift in Sources */,
+				B495D32E2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift in Sources */,
 				B41B2C6F2B039DB3008D57D1 /* Persistence.swift in Sources */,
 				B41B2C742B039DB3008D57D1 /* ContentView.swift in Sources */,
 				B41B2CBD2B03B1B5008D57D1 /* CharactersViewModel.swift in Sources */,
+				B495D3302B07CF970004CB53 /* DataPersistanceManagerRepository.swift in Sources */,
 				B41B2CB42B03A2A5008D57D1 /* Serie.swift in Sources */,
 				B41B2CB62B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift in Sources */,
 				B41B2CB02B03A26F008D57D1 /* APIClientUseCase.swift in Sources */,
@@ -573,6 +588,7 @@
 				B41B2CAE2B03A250008D57D1 /* Extension+URLResponse.swift in Sources */,
 				B41B2C722B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld in Sources */,
 				B4ABA9032B03F70300CB3315 /* CharacterSeriesView.swift in Sources */,
+				B495D32C2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift in Sources */,
 				B41B2CAA2B03A203008D57D1 /* APIClientRepository.swift in Sources */,
 				B41B2CAC2B03A223008D57D1 /* APIClient.swift in Sources */,
 			);
