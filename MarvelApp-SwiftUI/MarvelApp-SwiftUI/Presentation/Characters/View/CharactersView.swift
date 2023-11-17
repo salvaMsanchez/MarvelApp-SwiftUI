@@ -90,7 +90,7 @@ struct CharactersView: View {
                                 AsyncImage(url: URL(string: characterPhoto)) { photo in
                                     photo
                                         .resizable()
-                                        .frame(width: .infinity, height: 275)
+                                        .frame(height: 275)
                                         .cornerRadius(20)
                                         .overlay(
                                             ZStack {
@@ -132,7 +132,7 @@ struct CharactersView: View {
                                 } placeholder: {
                                     ZStack {
                                         RoundedRectangle(cornerRadius: 20)
-                                            .frame(width: .infinity, height: 275)
+                                            .frame(height: 275)
                                             .foregroundColor(.gray)
                                         Image(systemName: "person")
                                             .resizable()
