@@ -21,4 +21,8 @@ final class DataPersistanceManagerRepository: DataPersistanceManagerRepositoryPr
     func saveCharacter(characters: Characters, completion: @escaping (Result<Void, DataBaseError>) -> Void) {
         dataPersistanceManager.saveCharacter(characters: characters, completion: completion)
     }
+    
+    func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void) {
+        dataPersistanceManager.fetchingCharacters(completion: completion)
+    }
 }

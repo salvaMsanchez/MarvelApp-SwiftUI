@@ -63,6 +63,14 @@ final class CharactersViewModel: ObservableObject {
     
     func loadCharacters() {
         status = .loading
+        
+        let charactersSavedOnCoreData: Characters = fetchingCharactersCoreData()
+        charactersSavedOnCoreData.forEach { character in
+            print("------")
+            print(character)
+            print("------")
+        }
+        print("CONTADOR EN COREDATA -> \(charactersSavedOnCoreData.count)")
 
         DispatchQueue.global().async { [weak self] in
             let dispatchGroup = DispatchGroup()
@@ -90,6 +98,19 @@ final class CharactersViewModel: ObservableObject {
                 self?.saveCharactersCoreData()
             }
         }
+    }
+    
+    func fetchingCharactersCoreData() -> Characters {
+        var charactersCoreData: Characters = []
+        coreDataUseCase.fetchingCharacters { result in
+            switch result {
+                case .success(let characters):
+                    charactersCoreData = characters
+                case .failure(let error):
+                    print(error)
+            }
+        }
+        return charactersCoreData
     }
     
     func saveCharactersCoreData() {

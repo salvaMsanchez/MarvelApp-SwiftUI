@@ -11,6 +11,7 @@ import Foundation
 protocol DataPersistanceManagerUseCaseProtocol {
     var repository: DataPersistanceManagerRepositoryProtocol { get set }
     func saveCharacter(characters: Characters, completion: @escaping (Result<Void, DataBaseError>) -> Void)
+    func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void)
 }
 
 // MARK: - DataPersistanceManagerUseCase -
@@ -26,5 +27,9 @@ final class DataPersistanceManagerUseCase: DataPersistanceManagerUseCaseProtocol
     // MARK: - Functions -
     func saveCharacter(characters: Characters, completion: @escaping (Result<Void, DataBaseError>) -> Void) {
         repository.saveCharacter(characters: characters, completion: completion)
+    }
+    
+    func fetchingCharacters(completion: @escaping (Result<Characters, DataBaseError>) -> Void) {
+        repository.fetchingCharacters(completion: completion)
     }
 }
