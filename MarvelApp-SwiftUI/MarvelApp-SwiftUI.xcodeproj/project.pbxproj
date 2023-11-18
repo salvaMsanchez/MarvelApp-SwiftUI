@@ -32,8 +32,6 @@
 		B495D32E2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */; };
 		B495D3302B07CF970004CB53 /* DataPersistanceManagerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */; };
 		B495D3332B07D98A0004CB53 /* CharacterMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D3322B07D98A0004CB53 /* CharacterMapper.swift */; };
-		B49E1BE42B0925D6009F9E7D /* WatchOSMarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1BE32B0925D6009F9E7D /* WatchOSMarvelApp.swift */; };
-		B49E1BE62B0925D6009F9E7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1BE52B0925D6009F9E7D /* ContentView.swift */; };
 		B49E1BE82B0925D7009F9E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49E1BE72B0925D7009F9E7D /* Assets.xcassets */; };
 		B49E1BEB2B0925D7009F9E7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49E1BEA2B0925D7009F9E7D /* Preview Assets.xcassets */; };
 		B49E1BEE2B0925D7009F9E7D /* WatchOSMarvel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B49E1BE12B0925D6009F9E7D /* WatchOSMarvel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -162,8 +160,6 @@
 		B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerRepository.swift; sourceTree = "<group>"; };
 		B495D3322B07D98A0004CB53 /* CharacterMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMapper.swift; sourceTree = "<group>"; };
 		B49E1BE12B0925D6009F9E7D /* WatchOSMarvel Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchOSMarvel Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B49E1BE32B0925D6009F9E7D /* WatchOSMarvelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOSMarvelApp.swift; sourceTree = "<group>"; };
-		B49E1BE52B0925D6009F9E7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B49E1BE72B0925D7009F9E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B49E1BEA2B0925D7009F9E7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B49E1C142B093A2A009F9E7D /* WatchOSMarvel-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WatchOSMarvel-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -222,6 +218,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B401C5352B096E1100FD5F6A /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				B401C5362B096E2700FD5F6A /* View */,
+				B401C5372B096E2D00FD5F6A /* ViewModel */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		B401C5362B096E2700FD5F6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B49E1C222B0944EB009F9E7D /* LoadingWatchOSView.swift */,
+				B49E1C1A2B09431C009F9E7D /* LottieWatchOSView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B401C5372B096E2D00FD5F6A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B49E1C182B093F9A009F9E7D /* LottieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B401C5382B096E4D00FD5F6A /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				B401C5322B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
 		B41B2C602B039DB2008D57D1 = {
 			isa = PBXGroup;
 			children = (
@@ -445,15 +475,11 @@
 		B49E1BE22B0925D6009F9E7D /* WatchOSMarvel Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				B401C5382B096E4D00FD5F6A /* Subview */,
+				B401C5352B096E1100FD5F6A /* Lottie */,
 				B49E1C142B093A2A009F9E7D /* WatchOSMarvel-Watch-App-Info.plist */,
-				B49E1BE32B0925D6009F9E7D /* WatchOSMarvelApp.swift */,
-				B49E1BE52B0925D6009F9E7D /* ContentView.swift */,
 				B49E1BE72B0925D7009F9E7D /* Assets.xcassets */,
 				B49E1BE92B0925D7009F9E7D /* Preview Content */,
-				B49E1C182B093F9A009F9E7D /* LottieViewModel.swift */,
-				B49E1C1A2B09431C009F9E7D /* LottieWatchOSView.swift */,
-				B49E1C222B0944EB009F9E7D /* LoadingWatchOSView.swift */,
-				B401C5322B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift */,
 			);
 			path = "WatchOSMarvel Watch App";
 			sourceTree = "<group>";
@@ -829,7 +855,6 @@
 				B49E1C102B09387E009F9E7D /* NoFavoriteCharactersView.swift in Sources */,
 				B49E1C052B0937F1009F9E7D /* APIClientRepository.swift in Sources */,
 				B49E1C062B0937F4009F9E7D /* DataPersistanceManagerRepository.swift in Sources */,
-				B49E1BE62B0925D6009F9E7D /* ContentView.swift in Sources */,
 				B49E1C092B093817009F9E7D /* MarvelApp_SwiftUI.xcdatamodeld in Sources */,
 				B49E1C292B09460A009F9E7D /* RouteViewModel.swift in Sources */,
 				B49E1C112B093887009F9E7D /* CharacterSeriesView.swift in Sources */,
@@ -841,7 +866,6 @@
 				B49E1C012B0937B9009F9E7D /* Character.swift in Sources */,
 				B49E1C2A2B094646009F9E7D /* RoutingStatus.swift in Sources */,
 				B49E1C192B093F9A009F9E7D /* LottieViewModel.swift in Sources */,
-				B49E1BE42B0925D6009F9E7D /* WatchOSMarvelApp.swift in Sources */,
 				B49E1C1B2B09431C009F9E7D /* LottieWatchOSView.swift in Sources */,
 				B49E1C002B0937B4009F9E7D /* DataPersistanceManagerUseCase.swift in Sources */,
 				B49E1C282B094604009F9E7D /* RouteView.swift in Sources */,
