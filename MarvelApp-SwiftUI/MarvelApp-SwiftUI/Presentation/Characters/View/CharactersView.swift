@@ -15,20 +15,10 @@ struct CharactersView: View {
         NavigationStack {
             ZStack {
                 List {
+                    // MARK: - FavoriteCharacters -
                     Section {
                         if viewModel.favoritesCharacters.isEmpty {
-                            Rectangle()
-                                .frame(height: 200)
-                                .foregroundColor(.gray)
-                                .overlay(
-                                    VStack {
-                                        Image(systemName: "heart.slash.fill")
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                            .foregroundColor(.black)
-                                        Text("No favorite characters saved yet")
-                                    }
-                                )
+                            NoFavoriteCharactersView()
                         } else {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack(spacing: 12) {
@@ -37,32 +27,7 @@ struct CharactersView: View {
                                         NavigationLink {
                                             Text(character.name)
                                         } label: {
-                                            VStack {
-                                                AsyncImage(url: URL(string: characterPhoto)) { photo in
-                                                    photo
-                                                        .resizable()
-                                                        .scaledToFill()
-                                                        .frame(width: 120, height: 150)
-                                                        .cornerRadius(20)
-                                                } placeholder: {
-                                                    ZStack {
-                                                        RoundedRectangle(cornerRadius: 20)
-                                                            .frame(width: 120, height: 150)
-                                                            .foregroundColor(.gray)
-                                                        Image(systemName: "person")
-                                                            .resizable()
-                                                            .frame(width: 50, height: 50)
-                                                            .padding()
-                                                            .foregroundColor(.black)
-                                                    }
-                                                }
-                                                Text(character.name)
-                                                    .bold()
-                                                    .frame(width: 100, alignment: .leading)
-                                                    .lineLimit(1)
-                                                    .font(.system(size: 14))
-                                                    .foregroundColor(.white)
-                                            }
+                                            FavoriteCharacterCardView(photo: characterPhoto, characterName: character.name)
                                         }
                                     }
                                 }
@@ -74,6 +39,7 @@ struct CharactersView: View {
                         }
                     }
                     .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: -20,trailing: 0))
+                    // MARK: - Characters -
                     ForEach(Array(viewModel.characters.enumerated()), id: \.element.id) { index, character in
                         let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                         ZStack {
@@ -81,66 +47,11 @@ struct CharactersView: View {
                                 CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
                                     .navigationTitle("\(character.name) Series")
                                     .navigationBarTitleDisplayMode(.inline)
-                            } label: {
-                                
-                            }
+                            } label: { }
                             .opacity(0.0)
                             .buttonStyle(PlainButtonStyle())
                             HStack {
-                                AsyncImage(url: URL(string: characterPhoto)) { photo in
-                                    photo
-                                        .resizable()
-                                        .frame(height: 275)
-                                        .cornerRadius(20)
-                                        .overlay(
-                                            ZStack {
-                                                LinearGradient(gradient: Gradient(colors: [.clear, .clear, .clear, .black.opacity(0.8)]), startPoint: .bottom, endPoint: .top)
-                                                .cornerRadius(20)
-                                                VStack {
-                                                    HStack {
-                                                        Text(character.name)
-                                                            .font(.title)
-                                                            .foregroundColor(.white)
-                                                            .bold()
-                                                        Spacer()
-                                                        Button {
-                                                            //action
-                                                        } label: {
-                                                            if let isFavorite: Bool = character.favorite {
-                                                                Image(systemName: isFavorite ? "heart.fill" : "heart")
-                                                                    .resizable()
-                                                                    .scaledToFill()
-                                                                    .frame(width: 28, height: 28)
-                                                                    .foregroundColor(.white)
-                                                            } else {
-                                                                Image(systemName: "heart")
-                                                                    .resizable()
-                                                                    .scaledToFill()
-                                                                    .frame(width: 28, height: 28)
-                                                                    .foregroundColor(.white)
-                                                            }
-                                                        }
-                                                        .onTapGesture {
-                                                            viewModel.toggleCharacterFavoriteStatus(index: index)
-                                                        }
-                                                    }
-                                                    .padding()
-                                                    Spacer()
-                                                }
-                                            }
-                                        )
-                                } placeholder: {
-                                    ZStack {
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .frame(height: 275)
-                                            .foregroundColor(.gray)
-                                        Image(systemName: "person")
-                                            .resizable()
-                                            .frame(width: 100, height: 100)
-                                            .padding()
-                                            .foregroundColor(.black)
-                                    }
-                                }
+                                CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index)
                             }
                         }
                     }

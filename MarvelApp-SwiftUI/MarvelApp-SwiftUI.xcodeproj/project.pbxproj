@@ -38,6 +38,9 @@
 		B4ABA9122B0405B800CB3315 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9112B0405B800CB3315 /* SplashView.swift */; };
 		B4ABA9142B0405C200CB3315 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9132B0405C200CB3315 /* SplashViewModel.swift */; };
 		B4ABA9172B0406AB00CB3315 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9162B0406AB00CB3315 /* LottieView.swift */; };
+		B4AF5E6D2B08CB74001BAF26 /* NoFavoriteCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */; };
+		B4AF5E6F2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */; };
+		B4AF5E712B08CF90001BAF26 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */; };
 		B4B766822B0544100096544D /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766812B0544100096544D /* RouteView.swift */; };
 		B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766832B05441D0096544D /* RouteViewModel.swift */; };
 		B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766852B0545A50096544D /* RoutingStatus.swift */; };
@@ -97,6 +100,9 @@
 		B4ABA9112B0405B800CB3315 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		B4ABA9132B0405C200CB3315 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		B4ABA9162B0406AB00CB3315 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavoriteCharactersView.swift; sourceTree = "<group>"; };
+		B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCharacterCardView.swift; sourceTree = "<group>"; };
+		B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
 		B4B766812B0544100096544D /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		B4B766832B05441D0096544D /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
 		B4B766852B0545A50096544D /* RoutingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingStatus.swift; sourceTree = "<group>"; };
@@ -325,6 +331,9 @@
 			isa = PBXGroup;
 			children = (
 				B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */,
+				B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */,
+				B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */,
+				B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -582,6 +591,7 @@
 				B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */,
 				B4B766882B0559A00096544D /* LoadingView.swift in Sources */,
 				B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */,
+				B4AF5E712B08CF90001BAF26 /* CharacterCardView.swift in Sources */,
 				B4B766822B0544100096544D /* RouteView.swift in Sources */,
 				B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */,
 				B41B2C6D2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift in Sources */,
@@ -601,7 +611,9 @@
 				B41B2C722B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld in Sources */,
 				B4ABA9032B03F70300CB3315 /* CharacterSeriesView.swift in Sources */,
 				B495D32C2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift in Sources */,
+				B4AF5E6D2B08CB74001BAF26 /* NoFavoriteCharactersView.swift in Sources */,
 				B41B2CAA2B03A203008D57D1 /* APIClientRepository.swift in Sources */,
+				B4AF5E6F2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift in Sources */,
 				B41B2CAC2B03A223008D57D1 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
