@@ -41,6 +41,7 @@
 		B4AF5E6D2B08CB74001BAF26 /* NoFavoriteCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */; };
 		B4AF5E6F2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */; };
 		B4AF5E712B08CF90001BAF26 /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */; };
+		B4AF5E752B08D3C4001BAF26 /* SerieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E742B08D3C4001BAF26 /* SerieCardView.swift */; };
 		B4B766822B0544100096544D /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766812B0544100096544D /* RouteView.swift */; };
 		B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766832B05441D0096544D /* RouteViewModel.swift */; };
 		B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766852B0545A50096544D /* RoutingStatus.swift */; };
@@ -103,6 +104,7 @@
 		B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavoriteCharactersView.swift; sourceTree = "<group>"; };
 		B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCharacterCardView.swift; sourceTree = "<group>"; };
 		B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardView.swift; sourceTree = "<group>"; };
+		B4AF5E742B08D3C4001BAF26 /* SerieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerieCardView.swift; sourceTree = "<group>"; };
 		B4B766812B0544100096544D /* RouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteView.swift; sourceTree = "<group>"; };
 		B4B766832B05441D0096544D /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
 		B4B766852B0545A50096544D /* RoutingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingStatus.swift; sourceTree = "<group>"; };
@@ -330,10 +332,8 @@
 		B41B2CB82B03B173008D57D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4AF5E722B08D331001BAF26 /* Subviews */,
 				B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */,
-				B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */,
-				B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */,
-				B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +374,7 @@
 		B4ABA9012B03F6F000CB3315 /* CharacterSeriesView */ = {
 			isa = PBXGroup;
 			children = (
+				B4AF5E732B08D3B3001BAF26 /* Subviews */,
 				B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */,
 			);
 			path = CharacterSeriesView;
@@ -420,6 +421,24 @@
 				B4B766872B0559A00096544D /* LoadingView.swift */,
 			);
 			path = GeneralViews;
+			sourceTree = "<group>";
+		};
+		B4AF5E722B08D331001BAF26 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */,
+				B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */,
+				B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		B4AF5E732B08D3B3001BAF26 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				B4AF5E742B08D3C4001BAF26 /* SerieCardView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		B4B7667E2B0543E20096544D /* Routing */ = {
@@ -599,6 +618,7 @@
 				B41B2CBB2B03B1A8008D57D1 /* CharactersView.swift in Sources */,
 				B495D32E2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift in Sources */,
 				B495D3332B07D98A0004CB53 /* CharacterMapper.swift in Sources */,
+				B4AF5E752B08D3C4001BAF26 /* SerieCardView.swift in Sources */,
 				B41B2C6F2B039DB3008D57D1 /* Persistence.swift in Sources */,
 				B41B2C742B039DB3008D57D1 /* ContentView.swift in Sources */,
 				B41B2CBD2B03B1B5008D57D1 /* CharactersViewModel.swift in Sources */,
