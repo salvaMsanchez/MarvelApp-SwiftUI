@@ -10,10 +10,49 @@ import SwiftUI
 struct CharactersView: View {
     
     @StateObject var viewModel: CharactersViewModel
+    @State private var showFavorites = false
     
     var body: some View {
         NavigationStack {
             ZStack {
+                #if os(watchOS)
+                List {
+                    Section {
+                        Toggle(isOn: $showFavorites) {
+                            Text("My Favorites")
+                        }
+                        if showFavorites {
+                            ForEach(viewModel.favoritesCharacters) { character in
+                                let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
+                                NavigationLink {
+                                    CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character), height: 175, fontSize: 18)
+                                        .navigationTitle("\(character.name) Series")
+                                        .navigationBarTitleDisplayMode(.inline)
+                                } label: {
+                                    FavoriteCharacterCardWatchOSView(photo: characterPhoto, characterName: character.name)
+                                }
+                            }
+                        } else {
+                            ForEach(Array(viewModel.characters.enumerated()), id: \.element.id) { index, character in
+                                let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
+                                ZStack {
+                                    NavigationLink {
+                                        CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character), height: 175, fontSize: 18)
+                                            .navigationTitle("\(character.name) Series")
+                                            .navigationBarTitleDisplayMode(.inline)
+                                    } label: { }
+                                    .opacity(0.0)
+                                    .buttonStyle(PlainButtonStyle())
+                                    HStack {
+                                        CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index, height: 175, fontSize: 18, heartSize: 24)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .scrollIndicators(.hidden)
+                #else
                 List {
                     // MARK: - FavoriteCharacters -
                     Section {
@@ -25,7 +64,7 @@ struct CharactersView: View {
                                     ForEach(viewModel.favoritesCharacters) { character in
                                         let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                                         NavigationLink {
-                                            CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
+                                            CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character), height: 390, fontSize: 24)
                                                 .navigationTitle("\(character.name) Series")
                                                 .navigationBarTitleDisplayMode(.inline)
                                         } label: {
@@ -46,20 +85,21 @@ struct CharactersView: View {
                         let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                         ZStack {
                             NavigationLink {
-                                CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character))
+                                CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: false, character: character), height: 390, fontSize: 24)
                                     .navigationTitle("\(character.name) Series")
                                     .navigationBarTitleDisplayMode(.inline)
                             } label: { }
                             .opacity(0.0)
                             .buttonStyle(PlainButtonStyle())
                             HStack {
-                                CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index)
+                                CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index, height: 275, fontSize: 24, heartSize: 28)
                             }
                         }
                     }
                 }
                 .scrollIndicators(.hidden)
-//                .listStyle(.grouped)
+                .listStyle(.grouped)
+                #endif
                 switch viewModel.status {
                     case .loading:
                         let _ = print("Estado Characters .loading")

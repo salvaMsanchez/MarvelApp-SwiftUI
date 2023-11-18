@@ -15,6 +15,8 @@ struct LoadingWatchOSView: View {
         Image(uiImage: viewModel.image)
             .resizable()
             .scaledToFit()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black.edgesIgnoringSafeArea(.all).opacity(0.8))
             .onAppear {
                 self.viewModel.loadAnimationFromFile(filename: "marvelCharactersAnimation")
             }

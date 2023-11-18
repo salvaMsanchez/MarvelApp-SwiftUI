@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B401C5332B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401C5322B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift */; };
+		B401C5342B09627900FD5F6A /* FavoriteCharacterCardWatchOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401C5322B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift */; };
 		B41B2C6D2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2C6C2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift */; };
 		B41B2C6F2B039DB3008D57D1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2C6E2B039DB3008D57D1 /* Persistence.swift */; };
 		B41B2C722B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B41B2C702B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld */; };
@@ -130,6 +132,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B401C5322B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCharacterCardWatchOSView.swift; sourceTree = "<group>"; };
 		B41B2C692B039DB3008D57D1 /* MarvelApp-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarvelApp-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41B2C6C2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApp_SwiftUIApp.swift; sourceTree = "<group>"; };
 		B41B2C6E2B039DB3008D57D1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -450,6 +453,7 @@
 				B49E1C182B093F9A009F9E7D /* LottieViewModel.swift */,
 				B49E1C1A2B09431C009F9E7D /* LottieWatchOSView.swift */,
 				B49E1C222B0944EB009F9E7D /* LoadingWatchOSView.swift */,
+				B401C5322B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift */,
 			);
 			path = "WatchOSMarvel Watch App";
 			sourceTree = "<group>";
@@ -769,6 +773,7 @@
 				B4AF5E712B08CF90001BAF26 /* CharacterCardView.swift in Sources */,
 				B4B766822B0544100096544D /* RouteView.swift in Sources */,
 				B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */,
+				B401C5342B09627900FD5F6A /* FavoriteCharacterCardWatchOSView.swift in Sources */,
 				B41B2C6D2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift in Sources */,
 				B4ABA9172B0406AB00CB3315 /* LottieView.swift in Sources */,
 				B41B2CBB2B03B1A8008D57D1 /* CharactersView.swift in Sources */,
@@ -840,6 +845,7 @@
 				B49E1C1B2B09431C009F9E7D /* LottieWatchOSView.swift in Sources */,
 				B49E1C002B0937B4009F9E7D /* DataPersistanceManagerUseCase.swift in Sources */,
 				B49E1C282B094604009F9E7D /* RouteView.swift in Sources */,
+				B401C5332B09623700FD5F6A /* FavoriteCharacterCardWatchOSView.swift in Sources */,
 				B49E1C022B0937C2009F9E7D /* APIClientRepositoryProtocol.swift in Sources */,
 				B49E1C072B09380E009F9E7D /* APIClient.swift in Sources */,
 				B49E1C0C2B09385E009F9E7D /* Serie.swift in Sources */,

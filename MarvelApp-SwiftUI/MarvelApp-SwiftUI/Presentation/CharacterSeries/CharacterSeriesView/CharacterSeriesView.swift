@@ -10,13 +10,15 @@ import SwiftUI
 struct CharacterSeriesView: View {
     
     @StateObject var viewModel: CharacterSeriesViewModel
+    let height: CGFloat
+    let fontSize: CGFloat
     
     var body: some View {
         ZStack {
             List {
                 ForEach(viewModel.series) { serie in
                     let seriePhoto: String = "\(serie.thumbnail.path).\(serie.thumbnail.thumbnailExtension)"
-                    SerieCardView(photo: seriePhoto, serieTitle: serie.title, serieDescription: serie.description)
+                    SerieCardView(photo: seriePhoto, serieTitle: serie.title, serieDescription: serie.description, height: height, fontSize: fontSize)
                 }
             }
             switch viewModel.status {
@@ -41,6 +43,6 @@ struct CharacterSeriesView: View {
 
 struct CharacterSeriesView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: true, useCase: APIClientUseCaseFakeSuccess(), character: .init(id: 1, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))))
+        CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: true, useCase: APIClientUseCaseFakeSuccess(), character: .init(id: 1, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))), height: 390, fontSize: 28)
     }
 }

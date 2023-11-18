@@ -14,12 +14,15 @@ struct CharacterCardView: View {
     let characterName: String
     let characterFavorite: Bool?
     let index: Int
+    let height: CGFloat
+    let fontSize: CGFloat
+    let heartSize: CGFloat
     
     var body: some View {
         AsyncImage(url: URL(string: photo)) { photo in
             photo
                 .resizable()
-                .frame(height: 275)
+                .frame(height: height)
                 .cornerRadius(20)
                 .overlay(
                     ZStack {
@@ -28,9 +31,10 @@ struct CharacterCardView: View {
                         VStack {
                             HStack {
                                 Text(characterName)
-                                    .font(.title)
+                                    .font(.system(size: fontSize))
                                     .foregroundColor(.white)
                                     .bold()
+                                    .lineLimit(1)
                                 Spacer()
                                 Button {
                                     //action
@@ -39,13 +43,13 @@ struct CharacterCardView: View {
                                         Image(systemName: isFavorite ? "heart.fill" : "heart")
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: 28, height: 28)
+                                            .frame(width: heartSize, height: heartSize)
                                             .foregroundColor(.white)
                                     } else {
                                         Image(systemName: "heart")
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: 28, height: 28)
+                                            .frame(width: heartSize, height: heartSize)
                                             .foregroundColor(.white)
                                     }
                                 }
@@ -61,7 +65,7 @@ struct CharacterCardView: View {
         } placeholder: {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
-                    .frame(height: 275)
+                    .frame(height: height)
                     .foregroundColor(.gray)
                 Image(systemName: "person")
                     .resizable()
@@ -75,6 +79,6 @@ struct CharacterCardView: View {
 
 struct CharacterCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterCardView(viewModel: CharactersViewModel(), photo: "", characterName: "", characterFavorite: true, index: 1)
+        CharacterCardView(viewModel: CharactersViewModel(), photo: "", characterName: "", characterFavorite: true, index: 1, height: 275, fontSize: 18, heartSize: 28)
     }
 }
