@@ -18,8 +18,12 @@ struct SplashView: View {
                 let _ = print("Estado Splash .none")
             case .loading:
                 let _ = print("Estado Splash .loading")
+                #if os(watchOS)
+                LottieWatchOSView()
+                #else
                 LottieView(filename: "marvelSplashAnimation")
                     .frame(width: 300, height: 300)
+                #endif
             case .loaded:
                 let _ = print("Estado Splash .loaded")
                 withAnimation {

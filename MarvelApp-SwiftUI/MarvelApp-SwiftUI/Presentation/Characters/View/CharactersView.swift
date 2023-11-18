@@ -59,11 +59,15 @@ struct CharactersView: View {
                     }
                 }
                 .scrollIndicators(.hidden)
-                .listStyle(.grouped)
+//                .listStyle(.grouped)
                 switch viewModel.status {
                     case .loading:
                         let _ = print("Estado Characters .loading")
+                        #if os(watchOS)
+                        LoadingWatchOSView()
+                        #else
                         LoadingView()
+                        #endif
                     case .loaded:
                         let _ = print("Estado Characters .loaded")
                     case .none:

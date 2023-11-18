@@ -30,6 +30,49 @@
 		B495D32E2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */; };
 		B495D3302B07CF970004CB53 /* DataPersistanceManagerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */; };
 		B495D3332B07D98A0004CB53 /* CharacterMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D3322B07D98A0004CB53 /* CharacterMapper.swift */; };
+		B49E1BE42B0925D6009F9E7D /* WatchOSMarvelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1BE32B0925D6009F9E7D /* WatchOSMarvelApp.swift */; };
+		B49E1BE62B0925D6009F9E7D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1BE52B0925D6009F9E7D /* ContentView.swift */; };
+		B49E1BE82B0925D7009F9E7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49E1BE72B0925D7009F9E7D /* Assets.xcassets */; };
+		B49E1BEB2B0925D7009F9E7D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B49E1BEA2B0925D7009F9E7D /* Preview Assets.xcassets */; };
+		B49E1BEE2B0925D7009F9E7D /* WatchOSMarvel Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B49E1BE12B0925D6009F9E7D /* WatchOSMarvel Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B49E1BFD2B0936D6009F9E7D /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */; };
+		B49E1BFE2B09375E009F9E7D /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */; };
+		B49E1BFF2B0937B1009F9E7D /* APIClientUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CAF2B03A26F008D57D1 /* APIClientUseCase.swift */; };
+		B49E1C002B0937B4009F9E7D /* DataPersistanceManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */; };
+		B49E1C012B0937B9009F9E7D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CB12B03A28D008D57D1 /* Character.swift */; };
+		B49E1C022B0937C2009F9E7D /* APIClientRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */; };
+		B49E1C032B0937C6009F9E7D /* DataPersistanceManagerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */; };
+		B49E1C042B0937CE009F9E7D /* Extension+URLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CAD2B03A250008D57D1 /* Extension+URLResponse.swift */; };
+		B49E1C052B0937F1009F9E7D /* APIClientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CA92B03A203008D57D1 /* APIClientRepository.swift */; };
+		B49E1C062B0937F4009F9E7D /* DataPersistanceManagerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */; };
+		B49E1C072B09380E009F9E7D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CAB2B03A223008D57D1 /* APIClient.swift */; };
+		B49E1C082B093811009F9E7D /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */; };
+		B49E1C092B093817009F9E7D /* MarvelApp_SwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B41B2C702B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld */; };
+		B49E1C0A2B09381A009F9E7D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2C6E2B039DB3008D57D1 /* Persistence.swift */; };
+		B49E1C0B2B09381F009F9E7D /* CharacterMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D3322B07D98A0004CB53 /* CharacterMapper.swift */; };
+		B49E1C0C2B09385E009F9E7D /* Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CB32B03A2A5008D57D1 /* Serie.swift */; };
+		B49E1C0E2B093878009F9E7D /* CharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E702B08CF90001BAF26 /* CharacterCardView.swift */; };
+		B49E1C0F2B09387B009F9E7D /* FavoriteCharacterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E6E2B08CD1D001BAF26 /* FavoriteCharacterCardView.swift */; };
+		B49E1C102B09387E009F9E7D /* NoFavoriteCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E6C2B08CB74001BAF26 /* NoFavoriteCharactersView.swift */; };
+		B49E1C112B093887009F9E7D /* CharacterSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */; };
+		B49E1C122B09388D009F9E7D /* SerieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF5E742B08D3C4001BAF26 /* SerieCardView.swift */; };
+		B49E1C132B093890009F9E7D /* CharacterSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */; };
+		B49E1C172B093F58009F9E7D /* SDWebImageLottieCoder in Frameworks */ = {isa = PBXBuildFile; productRef = B49E1C162B093F58009F9E7D /* SDWebImageLottieCoder */; };
+		B49E1C192B093F9A009F9E7D /* LottieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1C182B093F9A009F9E7D /* LottieViewModel.swift */; };
+		B49E1C1B2B09431C009F9E7D /* LottieWatchOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1C1A2B09431C009F9E7D /* LottieWatchOSView.swift */; };
+		B49E1C1C2B09438E009F9E7D /* LottieWatchOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1C1A2B09431C009F9E7D /* LottieWatchOSView.swift */; };
+		B49E1C1E2B094461009F9E7D /* LottieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1C182B093F9A009F9E7D /* LottieViewModel.swift */; };
+		B49E1C212B094491009F9E7D /* SDWebImageLottieCoder in Frameworks */ = {isa = PBXBuildFile; productRef = B49E1C202B094491009F9E7D /* SDWebImageLottieCoder */; };
+		B49E1C232B0944EB009F9E7D /* LoadingWatchOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1C222B0944EB009F9E7D /* LoadingWatchOSView.swift */; };
+		B49E1C242B094534009F9E7D /* LoadingWatchOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E1C222B0944EB009F9E7D /* LoadingWatchOSView.swift */; };
+		B49E1C252B0945C8009F9E7D /* MarvelApp_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2C6C2B039DB3008D57D1 /* MarvelApp_SwiftUIApp.swift */; };
+		B49E1C262B0945D6009F9E7D /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9112B0405B800CB3315 /* SplashView.swift */; };
+		B49E1C272B0945E2009F9E7D /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9132B0405C200CB3315 /* SplashViewModel.swift */; };
+		B49E1C282B094604009F9E7D /* RouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766812B0544100096544D /* RouteView.swift */; };
+		B49E1C292B09460A009F9E7D /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766832B05441D0096544D /* RouteViewModel.swift */; };
+		B49E1C2A2B094646009F9E7D /* RoutingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766852B0545A50096544D /* RoutingStatus.swift */; };
+		B49E1C2B2B094ABB009F9E7D /* marvelCharactersAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ABA9092B0404F100CB3315 /* marvelCharactersAnimation.json */; };
+		B49E1C2C2B094ABF009F9E7D /* marvelSplashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */; };
 		B4ABA9032B03F70300CB3315 /* CharacterSeriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */; };
 		B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */; };
 		B4ABA9082B0404C200CB3315 /* marvelSplashAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */; };
@@ -63,7 +106,28 @@
 			remoteGlobalIDString = B41B2C682B039DB3008D57D1;
 			remoteInfo = "MarvelApp-SwiftUI";
 		};
+		B49E1BEC2B0925D7009F9E7D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B41B2C612B039DB2008D57D1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B49E1BE02B0925D6009F9E7D;
+			remoteInfo = "WatchOSMarvel Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B49E1BEF2B0925D7009F9E7D /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B49E1BEE2B0925D7009F9E7D /* WatchOSMarvel Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B41B2C692B039DB3008D57D1 /* MarvelApp-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MarvelApp-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +158,15 @@
 		B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerRepositoryProtocol.swift; sourceTree = "<group>"; };
 		B495D32F2B07CF970004CB53 /* DataPersistanceManagerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerRepository.swift; sourceTree = "<group>"; };
 		B495D3322B07D98A0004CB53 /* CharacterMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMapper.swift; sourceTree = "<group>"; };
+		B49E1BE12B0925D6009F9E7D /* WatchOSMarvel Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchOSMarvel Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49E1BE32B0925D6009F9E7D /* WatchOSMarvelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOSMarvelApp.swift; sourceTree = "<group>"; };
+		B49E1BE52B0925D6009F9E7D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B49E1BE72B0925D7009F9E7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B49E1BEA2B0925D7009F9E7D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B49E1C142B093A2A009F9E7D /* WatchOSMarvel-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WatchOSMarvel-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		B49E1C182B093F9A009F9E7D /* LottieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewModel.swift; sourceTree = "<group>"; };
+		B49E1C1A2B09431C009F9E7D /* LottieWatchOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieWatchOSView.swift; sourceTree = "<group>"; };
+		B49E1C222B0944EB009F9E7D /* LoadingWatchOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingWatchOSView.swift; sourceTree = "<group>"; };
 		B4ABA9022B03F70300CB3315 /* CharacterSeriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesView.swift; sourceTree = "<group>"; };
 		B4ABA9042B03F71400CB3315 /* CharacterSeriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSeriesViewModel.swift; sourceTree = "<group>"; };
 		B4ABA9072B0404C200CB3315 /* marvelSplashAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = marvelSplashAnimation.json; sourceTree = "<group>"; };
@@ -117,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4ABA90D2B04057500CB3315 /* Lottie in Frameworks */,
+				B49E1C212B094491009F9E7D /* SDWebImageLottieCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +208,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B49E1BDE2B0925D6009F9E7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49E1C172B093F58009F9E7D /* SDWebImageLottieCoder in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -143,7 +225,9 @@
 				B41B2C6B2B039DB3008D57D1 /* MarvelApp-SwiftUI */,
 				B41B2C822B039DB3008D57D1 /* MarvelApp-SwiftUITests */,
 				B41B2C8C2B039DB4008D57D1 /* MarvelApp-SwiftUIUITests */,
+				B49E1BE22B0925D6009F9E7D /* WatchOSMarvel Watch App */,
 				B41B2C6A2B039DB3008D57D1 /* Products */,
+				B49E1C1F2B094491009F9E7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +237,7 @@
 				B41B2C692B039DB3008D57D1 /* MarvelApp-SwiftUI.app */,
 				B41B2C7F2B039DB3008D57D1 /* MarvelApp-SwiftUITests.xctest */,
 				B41B2C892B039DB4008D57D1 /* MarvelApp-SwiftUIUITests.xctest */,
+				B49E1BE12B0925D6009F9E7D /* WatchOSMarvel Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +439,36 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		B49E1BE22B0925D6009F9E7D /* WatchOSMarvel Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				B49E1C142B093A2A009F9E7D /* WatchOSMarvel-Watch-App-Info.plist */,
+				B49E1BE32B0925D6009F9E7D /* WatchOSMarvelApp.swift */,
+				B49E1BE52B0925D6009F9E7D /* ContentView.swift */,
+				B49E1BE72B0925D7009F9E7D /* Assets.xcassets */,
+				B49E1BE92B0925D7009F9E7D /* Preview Content */,
+				B49E1C182B093F9A009F9E7D /* LottieViewModel.swift */,
+				B49E1C1A2B09431C009F9E7D /* LottieWatchOSView.swift */,
+				B49E1C222B0944EB009F9E7D /* LoadingWatchOSView.swift */,
+			);
+			path = "WatchOSMarvel Watch App";
+			sourceTree = "<group>";
+		};
+		B49E1BE92B0925D7009F9E7D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B49E1BEA2B0925D7009F9E7D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B49E1C1F2B094491009F9E7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B4ABA8FF2B03F6C800CB3315 /* CharacterSeries */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,14 +591,17 @@
 				B41B2C652B039DB3008D57D1 /* Sources */,
 				B41B2C662B039DB3008D57D1 /* Frameworks */,
 				B41B2C672B039DB3008D57D1 /* Resources */,
+				B49E1BEF2B0925D7009F9E7D /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B49E1BED2B0925D7009F9E7D /* PBXTargetDependency */,
 			);
 			name = "MarvelApp-SwiftUI";
 			packageProductDependencies = (
 				B4ABA90C2B04057500CB3315 /* Lottie */,
+				B49E1C202B094491009F9E7D /* SDWebImageLottieCoder */,
 			);
 			productName = "MarvelApp-SwiftUI";
 			productReference = B41B2C692B039DB3008D57D1 /* MarvelApp-SwiftUI.app */;
@@ -525,6 +643,26 @@
 			productReference = B41B2C892B039DB4008D57D1 /* MarvelApp-SwiftUIUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		B49E1BE02B0925D6009F9E7D /* WatchOSMarvel Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B49E1BF22B0925D7009F9E7D /* Build configuration list for PBXNativeTarget "WatchOSMarvel Watch App" */;
+			buildPhases = (
+				B49E1BDD2B0925D6009F9E7D /* Sources */,
+				B49E1BDE2B0925D6009F9E7D /* Frameworks */,
+				B49E1BDF2B0925D6009F9E7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchOSMarvel Watch App";
+			packageProductDependencies = (
+				B49E1C162B093F58009F9E7D /* SDWebImageLottieCoder */,
+			);
+			productName = "WatchOSMarvel Watch App";
+			productReference = B49E1BE12B0925D6009F9E7D /* WatchOSMarvel Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -546,6 +684,9 @@
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = B41B2C682B039DB3008D57D1;
 					};
+					B49E1BE02B0925D6009F9E7D = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 				};
 			};
 			buildConfigurationList = B41B2C642B039DB2008D57D1 /* Build configuration list for PBXProject "MarvelApp-SwiftUI" */;
@@ -559,6 +700,7 @@
 			mainGroup = B41B2C602B039DB2008D57D1;
 			packageReferences = (
 				B4ABA90B2B04057500CB3315 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				B49E1C152B093F57009F9E7D /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */,
 			);
 			productRefGroup = B41B2C6A2B039DB3008D57D1 /* Products */;
 			projectDirPath = "";
@@ -567,6 +709,7 @@
 				B41B2C682B039DB3008D57D1 /* MarvelApp-SwiftUI */,
 				B41B2C7E2B039DB3008D57D1 /* MarvelApp-SwiftUITests */,
 				B41B2C882B039DB4008D57D1 /* MarvelApp-SwiftUIUITests */,
+				B49E1BE02B0925D6009F9E7D /* WatchOSMarvel Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -597,6 +740,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B49E1BDF2B0925D6009F9E7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49E1C2C2B094ABF009F9E7D /* marvelSplashAnimation.json in Resources */,
+				B49E1C2B2B094ABB009F9E7D /* marvelCharactersAnimation.json in Resources */,
+				B49E1BEB2B0925D7009F9E7D /* Preview Assets.xcassets in Resources */,
+				B49E1BE82B0925D7009F9E7D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -610,6 +764,8 @@
 				B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */,
 				B4B766882B0559A00096544D /* LoadingView.swift in Sources */,
 				B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */,
+				B49E1C1E2B094461009F9E7D /* LottieViewModel.swift in Sources */,
+				B49E1C242B094534009F9E7D /* LoadingWatchOSView.swift in Sources */,
 				B4AF5E712B08CF90001BAF26 /* CharacterCardView.swift in Sources */,
 				B4B766822B0544100096544D /* RouteView.swift in Sources */,
 				B4ABA9052B03F71400CB3315 /* CharacterSeriesViewModel.swift in Sources */,
@@ -627,6 +783,7 @@
 				B41B2CB62B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift in Sources */,
 				B41B2CB02B03A26F008D57D1 /* APIClientUseCase.swift in Sources */,
 				B4ABA9142B0405C200CB3315 /* SplashViewModel.swift in Sources */,
+				B49E1C1C2B09438E009F9E7D /* LottieWatchOSView.swift in Sources */,
 				B41B2CAE2B03A250008D57D1 /* Extension+URLResponse.swift in Sources */,
 				B41B2C722B039DB3008D57D1 /* MarvelApp_SwiftUI.xcdatamodeld in Sources */,
 				B4ABA9032B03F70300CB3315 /* CharacterSeriesView.swift in Sources */,
@@ -655,6 +812,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B49E1BDD2B0925D6009F9E7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B49E1C042B0937CE009F9E7D /* Extension+URLResponse.swift in Sources */,
+				B49E1C0A2B09381A009F9E7D /* Persistence.swift in Sources */,
+				B49E1C232B0944EB009F9E7D /* LoadingWatchOSView.swift in Sources */,
+				B49E1C0E2B093878009F9E7D /* CharacterCardView.swift in Sources */,
+				B49E1BFE2B09375E009F9E7D /* CharactersViewModel.swift in Sources */,
+				B49E1C102B09387E009F9E7D /* NoFavoriteCharactersView.swift in Sources */,
+				B49E1C052B0937F1009F9E7D /* APIClientRepository.swift in Sources */,
+				B49E1C062B0937F4009F9E7D /* DataPersistanceManagerRepository.swift in Sources */,
+				B49E1BE62B0925D6009F9E7D /* ContentView.swift in Sources */,
+				B49E1C092B093817009F9E7D /* MarvelApp_SwiftUI.xcdatamodeld in Sources */,
+				B49E1C292B09460A009F9E7D /* RouteViewModel.swift in Sources */,
+				B49E1C112B093887009F9E7D /* CharacterSeriesView.swift in Sources */,
+				B49E1C122B09388D009F9E7D /* SerieCardView.swift in Sources */,
+				B49E1C082B093811009F9E7D /* DataPersistanceManager.swift in Sources */,
+				B49E1C0B2B09381F009F9E7D /* CharacterMapper.swift in Sources */,
+				B49E1C132B093890009F9E7D /* CharacterSeriesViewModel.swift in Sources */,
+				B49E1C272B0945E2009F9E7D /* SplashViewModel.swift in Sources */,
+				B49E1C012B0937B9009F9E7D /* Character.swift in Sources */,
+				B49E1C2A2B094646009F9E7D /* RoutingStatus.swift in Sources */,
+				B49E1C192B093F9A009F9E7D /* LottieViewModel.swift in Sources */,
+				B49E1BE42B0925D6009F9E7D /* WatchOSMarvelApp.swift in Sources */,
+				B49E1C1B2B09431C009F9E7D /* LottieWatchOSView.swift in Sources */,
+				B49E1C002B0937B4009F9E7D /* DataPersistanceManagerUseCase.swift in Sources */,
+				B49E1C282B094604009F9E7D /* RouteView.swift in Sources */,
+				B49E1C022B0937C2009F9E7D /* APIClientRepositoryProtocol.swift in Sources */,
+				B49E1C072B09380E009F9E7D /* APIClient.swift in Sources */,
+				B49E1C0C2B09385E009F9E7D /* Serie.swift in Sources */,
+				B49E1C0F2B09387B009F9E7D /* FavoriteCharacterCardView.swift in Sources */,
+				B49E1C252B0945C8009F9E7D /* MarvelApp_SwiftUIApp.swift in Sources */,
+				B49E1BFF2B0937B1009F9E7D /* APIClientUseCase.swift in Sources */,
+				B49E1C262B0945D6009F9E7D /* SplashView.swift in Sources */,
+				B49E1BFD2B0936D6009F9E7D /* CharactersView.swift in Sources */,
+				B49E1C032B0937C6009F9E7D /* DataPersistanceManagerRepositoryProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -667,6 +864,11 @@
 			isa = PBXTargetDependency;
 			target = B41B2C682B039DB3008D57D1 /* MarvelApp-SwiftUI */;
 			targetProxy = B41B2C8A2B039DB4008D57D1 /* PBXContainerItemProxy */;
+		};
+		B49E1BED2B0925D7009F9E7D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B49E1BE02B0925D6009F9E7D /* WatchOSMarvel Watch App */;
+			targetProxy = B49E1BEC2B0925D7009F9E7D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -783,6 +985,7 @@
 		B41B2C942B039DB4008D57D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "MarvelApp-SwiftUI/MarvelApp_SwiftUI.entitlements";
@@ -822,6 +1025,7 @@
 		B41B2C952B039DB4008D57D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "MarvelApp-SwiftUI/MarvelApp_SwiftUI.entitlements";
@@ -948,6 +1152,69 @@
 			};
 			name = Release;
 		};
+		B49E1BF02B0925D7009F9E7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchOSMarvel Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 9THYRJN444;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchOSMarvel-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = WatchOSMarvel;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.salvamoreno.MarvelApp-SwiftUI";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salvamoreno.MarvelApp-SwiftUI.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		B49E1BF12B0925D7009F9E7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchOSMarvel Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 9THYRJN444;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchOSMarvel-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = WatchOSMarvel;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.salvamoreno.MarvelApp-SwiftUI";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salvamoreno.MarvelApp-SwiftUI.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -987,9 +1254,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B49E1BF22B0925D7009F9E7D /* Build configuration list for PBXNativeTarget "WatchOSMarvel Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49E1BF02B0925D7009F9E7D /* Debug */,
+				B49E1BF12B0925D7009F9E7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B49E1C152B093F57009F9E7D /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageLottieCoder";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 		B4ABA90B2B04057500CB3315 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -1001,6 +1285,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B49E1C162B093F58009F9E7D /* SDWebImageLottieCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49E1C152B093F57009F9E7D /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */;
+			productName = SDWebImageLottieCoder;
+		};
+		B49E1C202B094491009F9E7D /* SDWebImageLottieCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49E1C152B093F57009F9E7D /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */;
+			productName = SDWebImageLottieCoder;
+		};
 		B4ABA90C2B04057500CB3315 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B4ABA90B2B04057500CB3315 /* XCRemoteSwiftPackageReference "lottie-spm" */;

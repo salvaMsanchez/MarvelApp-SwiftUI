@@ -116,6 +116,7 @@ Se han implementado llamadas asíncronas utilizando las funciones `async` y `awa
 * [iOS 16 not responding to changes in section spacing](https://www.reddit.com/r/SwiftUI/comments/xia4sv/ios_16_not_responding_to_changes_in_section/?rdt=63091)
 * [ListStyle](https://sarunw.com/posts/swiftui-list-style/)
 * [SwiftUI NavigationLink Hide Arrow Indicator on List](https://thinkdiff.net/swiftui-navigationlink-hide-arrow-indicator-on-list-b842bcb78c79)
+* [A Guide to Utilize Lottie Animations in SwiftUI watchOS](https://medium.com/@achmadsyarieft/a-guide-to-utilize-lottie-animations-in-swiftui-watchos-b76e07524700)
 
 ---
 

@@ -22,7 +22,11 @@ struct CharacterSeriesView: View {
             switch viewModel.status {
                 case .loading:
                     let _ = print("Estado Series .loading")
+                    #if os(watchOS)
+                    LoadingWatchOSView()
+                    #else
                     LoadingView()
+                    #endif
                 case .loaded:
                     let _ = print("Estado Series .loaded")
                 case .none:
