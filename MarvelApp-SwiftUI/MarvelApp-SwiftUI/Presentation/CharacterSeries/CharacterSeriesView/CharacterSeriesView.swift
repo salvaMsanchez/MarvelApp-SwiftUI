@@ -21,6 +21,7 @@ struct CharacterSeriesView: View {
                     SerieCardView(photo: seriePhoto, serieTitle: serie.title, serieDescription: serie.description, height: height, fontSize: fontSize)
                 }
             }
+            .scrollIndicators(.hidden)
             switch viewModel.status {
                 case .loading:
                     let _ = print("Estado Series .loading")

@@ -92,7 +92,7 @@ struct CharactersView: View {
                             .opacity(0.0)
                             .buttonStyle(PlainButtonStyle())
                             HStack {
-                                CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index, height: 275, fontSize: 24, heartSize: 28)
+                                CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index, height: 275, fontSize: 32, heartSize: 28)
                             }
                         }
                     }

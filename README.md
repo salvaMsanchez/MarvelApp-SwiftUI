@@ -118,6 +118,14 @@ Se han implementado llamadas asíncronas utilizando las funciones `async` y `awa
 * [SwiftUI NavigationLink Hide Arrow Indicator on List](https://thinkdiff.net/swiftui-navigationlink-hide-arrow-indicator-on-list-b842bcb78c79)
 * [A Guide to Utilize Lottie Animations in SwiftUI watchOS](https://medium.com/@achmadsyarieft/a-guide-to-utilize-lottie-animations-in-swiftui-watchos-b76e07524700)
 * [iOS Share CoreData with Extension and App Groups](https://medium.com/@pietromessineo/ios-share-coredata-with-extension-and-app-groups-69f135628736)
+* Solo CoreData para la liista de héroes.
+
+# Mejoras a implementar
+
+* CoreData para lista de series
+* Detalle para series ya que el texto queda mal a nivel diseño y no se lee, tanto para móvil como para reloj
+* Implementar conectividad entre móvil y reloj
+
 
 ---
 
