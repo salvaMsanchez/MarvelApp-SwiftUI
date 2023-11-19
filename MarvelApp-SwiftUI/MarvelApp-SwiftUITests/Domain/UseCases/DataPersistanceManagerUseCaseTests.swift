@@ -52,7 +52,7 @@ final class DataPersistanceManagerUseCaseTests: XCTestCase {
         sut.fetchingCharacters { result in
             switch result {
                 case .success(let characters):
-                    let character = characters.first
+                    let character = characters.last
                     XCTAssertNotNil(character, "The character was not saved in CoreData")
                     XCTAssertEqual(character?.name, "Iron Man")
                 case .failure(let error):
@@ -77,7 +77,7 @@ final class DataPersistanceManagerUseCaseTests: XCTestCase {
         
         sut.updateFavorite(thisCharacter: character, to: false) { result in
             switch result {
-                case .success():
+                case .success(()):
                     expectation.fulfill()
                 case .failure(let error):
                     XCTFail("Error updating favorite parameter: \(error)")
@@ -89,7 +89,10 @@ final class DataPersistanceManagerUseCaseTests: XCTestCase {
         sut.fetchingCharacters { result in
             switch result {
                 case .success(let characters):
-                    let character = characters.first
+                    let characterIronMan = characters.filter { character in
+                        character.name == "Iron Man"
+                    }
+                    let character = characterIronMan.first
                     XCTAssertNotNil(character, "The character was not saved in CoreData")
                     XCTAssertFalse(character!.favorite!)
                 case .failure(let error):

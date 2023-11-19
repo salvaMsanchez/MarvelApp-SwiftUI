@@ -168,22 +168,30 @@ final class CharactersViewModel: ObservableObject {
     func loadCharactersTesting() {
         status = .loading
         
+        let dispatchGroup = DispatchGroup()
+        
         for _ in 1...5 {
+            dispatchGroup.enter()
             Task.init { [weak self] in
                 do {
                     guard let character = try await self?.useCase.getCharacter(by: "", apiRouter: .getCharacter) else {
+                        dispatchGroup.leave()
                         return
                     }
                     DispatchQueue.main.async { [weak self] in
                         self?.characters.append(character)
                         self?.saveCharactersCoreData()
+                        dispatchGroup.leave()
                     }
                 } catch {
                     print("Testing error: \(error)")
+                    dispatchGroup.leave()
                 }
             }
         }
         
-        status = .loaded
+        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+            self?.status = .loaded
+        }
     }
 }
