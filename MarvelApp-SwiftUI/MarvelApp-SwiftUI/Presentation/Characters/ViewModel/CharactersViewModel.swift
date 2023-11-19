@@ -176,6 +176,7 @@ final class CharactersViewModel: ObservableObject {
                     }
                     DispatchQueue.main.async { [weak self] in
                         self?.characters.append(character)
+                        self?.saveCharactersCoreData()
                     }
                 } catch {
                     print("Testing error: \(error)")

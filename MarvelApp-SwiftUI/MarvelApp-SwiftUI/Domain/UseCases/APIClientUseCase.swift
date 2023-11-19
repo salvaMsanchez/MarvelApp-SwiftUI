@@ -35,7 +35,7 @@ final class APIClientUseCase: APIClientUseCaseProtocol {
 }
 
 // Class for UI design and testing
-final class APIClientUseCaseFakeSuccess: APIClientUseCaseProtocol{
+final class APIClientUseCaseFakeSuccess: APIClientUseCaseProtocol {
     // MARK: - Properties -
     var repository: APIClientRepositoryProtocol
     
