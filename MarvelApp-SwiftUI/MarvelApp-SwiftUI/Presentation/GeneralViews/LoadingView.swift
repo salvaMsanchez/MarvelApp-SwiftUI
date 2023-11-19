@@ -7,7 +7,9 @@
 
 import SwiftUI
 
+// MARK: - LoadingView -
 struct LoadingView: View {
+    // MARK: - Body -
     var body: some View {
             LottieView(filename: "marvelCharactersAnimation")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

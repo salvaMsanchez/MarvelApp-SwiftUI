@@ -9,17 +9,16 @@ import Foundation
 
 typealias Characters = [Character]
 
-// MARK: - Character
+// MARK: - Character -
 struct Character: Decodable, Identifiable {
     let id: Int
     let name: String
     let description: String
     let thumbnail: CharacterThumbnail
-//    let resourceURI: String
     var favorite: Bool?
 }
 
-// MARK: - CharacterResults
+// MARK: - CharacterResults -
 struct CharacterResults: Decodable {
     let characters: Characters
     
@@ -36,7 +35,7 @@ struct CharacterResults: Decodable {
     }
 }
 
-// MARK: - Thumbnail
+// MARK: - Thumbnail -
 struct CharacterThumbnail: Decodable {
     let path: String
     let thumbnailExtension: Extension
@@ -47,7 +46,7 @@ struct CharacterThumbnail: Decodable {
     }
 }
 
-// MARK: - Extension
+// MARK: - Extension -
 enum Extension: String, Decodable {
     case gif = "gif"
     case jpg = "jpg"

@@ -7,12 +7,15 @@
 
 import SwiftUI
 
+// MARK: - FavoriteCharacterCardWatchOSView -
 struct FavoriteCharacterCardWatchOSView: View {
-    
+    // MARK: - Properties -
     let photo: String
     let characterName: String
     
+    // MARK: - Body -
     var body: some View {
+        // Image
         AsyncImage(url: URL(string: photo)) { photo in
             photo
                 .resizable()
@@ -20,10 +23,12 @@ struct FavoriteCharacterCardWatchOSView: View {
                 .cornerRadius(20)
                 .overlay(
                     ZStack {
+                        // Gradient
                         LinearGradient(gradient: Gradient(colors: [.clear, .clear, .clear, .black.opacity(0.8)]), startPoint: .bottom, endPoint: .top)
                         .cornerRadius(20)
                         VStack {
                             HStack {
+                                // Name
                                 Text(characterName)
                                     .font(.system(size: 18))
                                     .foregroundColor(.white)

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
+// MARK: - CharacterCardView -
 struct CharacterCardView: View {
-    
+    // MARK: - Properties -
     var viewModel: CharactersViewModel
     let photo: String
     let characterName: String
@@ -18,7 +19,9 @@ struct CharacterCardView: View {
     let fontSize: CGFloat
     let heartSize: CGFloat
     
+    // MARK: - Body -
     var body: some View {
+        // Image
         AsyncImage(url: URL(string: photo)) { photo in
             photo
                 .resizable()
@@ -26,18 +29,21 @@ struct CharacterCardView: View {
                 .cornerRadius(20)
                 .overlay(
                     ZStack {
+                        // Gradient
                         LinearGradient(gradient: Gradient(colors: [.clear, .clear, .clear, .black.opacity(0.8)]), startPoint: .bottom, endPoint: .top)
                         .cornerRadius(20)
                         VStack {
                             HStack {
+                                // Name
                                 Text(characterName)
                                     .font(.system(size: fontSize))
                                     .foregroundColor(.white)
                                     .bold()
                                     .lineLimit(1)
                                 Spacer()
+                                // Favorite Button
                                 Button {
-                                    //action
+                                    
                                 } label: {
                                     if let isFavorite: Bool = characterFavorite {
                                         Image(systemName: isFavorite ? "heart.fill" : "heart")

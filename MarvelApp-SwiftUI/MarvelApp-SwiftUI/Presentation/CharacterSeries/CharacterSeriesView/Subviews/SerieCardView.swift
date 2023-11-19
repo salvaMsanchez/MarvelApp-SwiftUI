@@ -7,15 +7,18 @@
 
 import SwiftUI
 
+// MARK: - SerieCardView -
 struct SerieCardView: View {
-    
+    // MARK: - Properties -
     let photo: String
     let serieTitle: String
     let serieDescription: String?
     let height: CGFloat
     let fontSize: CGFloat
     
+    // MARK: - Body -
     var body: some View {
+        // Image
         AsyncImage(url: URL(string: photo)) { photo in
             photo
                 .resizable()
@@ -23,6 +26,7 @@ struct SerieCardView: View {
                 .cornerRadius(20)
                 .overlay(
                     ZStack {
+                        // Gradient
                         #if os(watchOS)
                         LinearGradient(gradient: Gradient(colors: [.clear, .clear, .black.opacity(0.6), .black.opacity(0.8)]), startPoint: .bottom, endPoint: .top)
                         .cornerRadius(20)
@@ -32,6 +36,7 @@ struct SerieCardView: View {
                         #endif
                         VStack {
                             HStack {
+                                // Title
                                 Text(serieTitle)
                                     .font(.system(size: fontSize))
                                     .foregroundColor(.white)
@@ -44,6 +49,7 @@ struct SerieCardView: View {
                             
                             #else
                             HStack {
+                                // Description
                                 Text(serieDescription ?? "")
                                     .font(.body)
                                     .foregroundColor(.white)

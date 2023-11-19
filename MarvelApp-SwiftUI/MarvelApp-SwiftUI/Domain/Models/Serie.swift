@@ -9,6 +9,7 @@ import Foundation
 
 typealias Series = [Serie]
 
+// MARK: - Serie -
 struct Serie: Decodable, Identifiable {
     let id: Int
     let title: String
@@ -16,7 +17,7 @@ struct Serie: Decodable, Identifiable {
     let thumbnail: SerieThumbnail
 }
 
-// MARK: - Result
+// MARK: - Result -
 struct SerieResults: Decodable {
     let series: Series
     
@@ -33,7 +34,7 @@ struct SerieResults: Decodable {
     }
 }
 
-// MARK: - Thumbnail
+// MARK: - Thumbnail -
 struct SerieThumbnail: Decodable {
     let path: String
     let thumbnailExtension: String

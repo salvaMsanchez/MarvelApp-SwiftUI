@@ -7,13 +7,16 @@
 
 import SwiftUI
 
+// MARK: - FavoriteCharacterCardView -
 struct FavoriteCharacterCardView: View {
-    
+    // MARK: - Properties -
     let photo: String
     let characterName: String
     
+    // MARK: - Body -
     var body: some View {
         VStack {
+            // Image
             AsyncImage(url: URL(string: photo)) { photo in
                 photo
                     .resizable()
@@ -32,6 +35,7 @@ struct FavoriteCharacterCardView: View {
                         .foregroundColor(.black)
                 }
             }
+            // Name
             Text(characterName)
                 .bold()
                 .frame(width: 100, alignment: .leading)

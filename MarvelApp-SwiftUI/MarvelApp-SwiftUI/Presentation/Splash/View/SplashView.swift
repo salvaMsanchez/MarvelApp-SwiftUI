@@ -7,11 +7,13 @@
 
 import SwiftUI
 
+// MARK: - SplashView -
 struct SplashView: View {
-    
+    // MARK: - Properties -
     @EnvironmentObject var routeViewModel: RouteViewModel
     @StateObject var viewModel: SplashViewModel
     
+    // MARK: - Body -
     var body: some View {
         switch viewModel.status {
             case .none:

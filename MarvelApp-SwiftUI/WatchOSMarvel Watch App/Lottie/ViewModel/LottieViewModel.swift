@@ -9,11 +9,12 @@ import SwiftUI
 import UIKit
 import SDWebImageLottieCoder
 
+// MARK: - LottieViewModel -
 final class LottieViewModel: ObservableObject {
+    // MARK: - Properties -
     @Published private(set) var image: UIImage = UIImage(named: "loadingPlaceholder")!
     
     // MARK: - Animation
-    
     private var coder: SDImageLottieCoder?
     private var animationTimer: Timer?
     private var currentFrame: UInt = 0

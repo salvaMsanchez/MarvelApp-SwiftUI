@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+// MARK: - LottieWatchOSView -
 struct LottieWatchOSView: View {
-    
+    // MARK: - Properties -
     @StateObject var viewModel: LottieViewModel = .init()
     
+    // MARK: - Body -
     var body: some View {
+        // Image
         Image(uiImage: viewModel.image)
             .resizable()
             .scaledToFit()

@@ -7,8 +7,8 @@
 
 import Foundation
 
+// MARK: - RouteViewModel -
 final class RouteViewModel: ObservableObject {
-    
+    // MARK: - Properties -
     @Published var status: RoutingStatus = .none
-    
 }

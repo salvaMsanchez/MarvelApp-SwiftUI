@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+// MARK: - CharacterSeriesView -
 struct CharacterSeriesView: View {
-    
+    // MARK: - Properties -
     @StateObject var viewModel: CharacterSeriesViewModel
     let height: CGFloat
     let fontSize: CGFloat
     
+    // MARK: - Body -
     var body: some View {
         ZStack {
+            // MARK: - Series List -
             List {
                 ForEach(viewModel.series) { serie in
                     let seriePhoto: String = "\(serie.thumbnail.path).\(serie.thumbnail.thumbnailExtension)"

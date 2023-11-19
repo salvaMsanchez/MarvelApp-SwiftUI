@@ -119,6 +119,7 @@ Se han implementado llamadas asíncronas utilizando las funciones `async` y `awa
 * [A Guide to Utilize Lottie Animations in SwiftUI watchOS](https://medium.com/@achmadsyarieft/a-guide-to-utilize-lottie-animations-in-swiftui-watchos-b76e07524700)
 * [iOS Share CoreData with Extension and App Groups](https://medium.com/@pietromessineo/ios-share-coredata-with-extension-and-app-groups-69f135628736)
 * Solo CoreData para la liista de héroes.
+* Habalar sobre la utilidad del routeViewModel y que aquí podría ser omitido pero que no se ha hehco así ya que es buena práctica por si el proyecto crece en un futuro y se agregan funcionalidades como el login, el logout, etc., de las cuales se ocuparía el routeViewModel.
 
 # Mejoras a implementar
 

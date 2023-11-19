@@ -12,6 +12,7 @@ enum SplashViewStatus {
     case none, loading, loaded, error
 }
 
+// MARK: - SplashViewModel -
 final class SplashViewModel: ObservableObject {
     // MARK: - Properties -
     @Published var status: SplashViewStatus = .none

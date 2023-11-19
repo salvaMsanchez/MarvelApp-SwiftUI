@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+// MARK: - RouteView -
 struct RouteView: View {
-    
+    // MARK: - Properties -
     @EnvironmentObject var routeViewModel: RouteViewModel
     
+    // MARK: - Body -
     var body: some View {
         // StatusBox / ViewRouter
         switch routeViewModel.status {

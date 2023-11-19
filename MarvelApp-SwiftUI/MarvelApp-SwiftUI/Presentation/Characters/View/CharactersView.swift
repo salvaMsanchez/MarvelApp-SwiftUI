@@ -7,21 +7,26 @@
 
 import SwiftUI
 
+// MARK: - CharactersView -
 struct CharactersView: View {
-    
+    // MARK: - Properties -
     @StateObject var viewModel: CharactersViewModel
     @State private var showFavorites = false
     
+    // MARK: - Body -
     var body: some View {
         NavigationStack {
             ZStack {
                 #if os(watchOS)
+                // MARK: - Characters List WatchOS -
                 List {
                     Section {
+                        // Favorites Toggle
                         Toggle(isOn: $showFavorites) {
                             Text("My Favorites")
                         }
                         if showFavorites {
+                            // Favorites List
                             ForEach(viewModel.favoritesCharacters) { character in
                                 let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                                 NavigationLink {
@@ -33,6 +38,7 @@ struct CharactersView: View {
                                 }
                             }
                         } else {
+                            // Characters List
                             ForEach(Array(viewModel.characters.enumerated()), id: \.element.id) { index, character in
                                 let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                                 ZStack {
@@ -53,8 +59,9 @@ struct CharactersView: View {
                 }
                 .scrollIndicators(.hidden)
                 #else
+                // MARK: - Characters List iOS -
                 List {
-                    // MARK: - FavoriteCharacters -
+                    // Favorites List
                     Section {
                         if viewModel.favoritesCharacters.isEmpty {
                             NoFavoriteCharactersView()
@@ -73,14 +80,15 @@ struct CharactersView: View {
                                     }
                                 }
                                 .padding([.leading, .trailing], 16)
-                                .background(.blue)
+//                                .background(.blue)
                             }
                             .frame(height: 200)
-                            .background(.red)
+//                            .background(.red)
                         }
                     }
-                    .listRowInsets(EdgeInsets(top: 0,leading: 0,bottom: -20,trailing: 0))
-                    // MARK: - Characters -
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: -20, trailing: 0))
+                    // Characters List
                     ForEach(Array(viewModel.characters.enumerated()), id: \.element.id) { index, character in
                         let characterPhoto: String = "\(character.thumbnail.path).\(character.thumbnail.thumbnailExtension.rawValue)"
                         ZStack {
@@ -97,8 +105,10 @@ struct CharactersView: View {
                         }
                     }
                 }
+//                .background(.green)
                 .scrollIndicators(.hidden)
                 .listStyle(.grouped)
+//                .scrollContentBackground(.hidden)
                 #endif
                 switch viewModel.status {
                     case .loading:
@@ -117,7 +127,6 @@ struct CharactersView: View {
                 }
             }
             .navigationTitle("Marvel Heroes")
-//            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

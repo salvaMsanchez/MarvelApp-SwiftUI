@@ -16,8 +16,8 @@ enum CharactersSeriesViewStatus {
 final class CharacterSeriesViewModel: ObservableObject {
     // MARK: - Properties -
     @Published var series: Series = []
-    var character: Character
     @Published var status: CharactersSeriesViewStatus = .none
+    var character: Character
     
     // MARK: - Use Case -
     let useCase: APIClientUseCaseProtocol

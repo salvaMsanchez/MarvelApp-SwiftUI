@@ -7,17 +7,20 @@
 
 import SwiftUI
 
+// MARK: - NoFavoriteCharactersView -
 struct NoFavoriteCharactersView: View {
+    // MARK: - Body -
     var body: some View {
         Rectangle()
             .frame(height: 200)
             .foregroundColor(.gray)
             .overlay(
                 VStack(spacing: 16) {
+                    // Image
                     Image(systemName: "heart.slash.fill")
                         .resizable()
                         .frame(width: 50, height: 50)
-//                        .foregroundColor(.black)
+                    // Text
                     Text("No favorite characters saved yet")
                 }
             )

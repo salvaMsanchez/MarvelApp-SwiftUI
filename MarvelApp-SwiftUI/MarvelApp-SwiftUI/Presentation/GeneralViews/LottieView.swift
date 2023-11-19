@@ -8,11 +8,15 @@
 import SwiftUI
 import Lottie
 
+// MARK: - LottieView -
 struct LottieView: UIViewRepresentable {
+    // MARK: - Properties -
     var filename: String
     
+    // MARK: - Typealias -
     typealias UIViewType = UIView
     
+    // MARK: - Functions -
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView(frame: .zero)
         

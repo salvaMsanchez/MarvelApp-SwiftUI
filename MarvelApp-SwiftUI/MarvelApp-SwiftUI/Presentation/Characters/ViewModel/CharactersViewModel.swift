@@ -28,12 +28,12 @@ final class CharactersViewModel: ObservableObject {
     // MARK: - Properties -
     let listCharacters: [String] = charactersToUse
     @Published var characters: Characters = []
+    @Published var status: CharactersViewStatus = .none
     var favoritesCharacters: Characters {
         return characters.filter { character in
             character.favorite == true
         }
     }
-    @Published var status: CharactersViewStatus = .none
     
     // MARK: - Use Case -
     let useCase: APIClientUseCaseProtocol
@@ -103,11 +103,11 @@ final class CharactersViewModel: ObservableObject {
                 }
             }
             characters = charactersSavedOnCoreData
-            print("!!!!!!!!!!!!!")
-            print("!!!!!!!!!!!!!")
-            print(characters)
-            print("!!!!!!!!!!!!!")
-            print("!!!!!!!!!!!!!")
+//            print("!!!!!!!!!!!!!")
+//            print("!!!!!!!!!!!!!")
+//            print(characters)
+//            print("!!!!!!!!!!!!!")
+//            print("!!!!!!!!!!!!!")
         } else {
             DispatchQueue.global().async { [weak self] in
                 let dispatchGroup = DispatchGroup()
@@ -131,7 +131,7 @@ final class CharactersViewModel: ObservableObject {
                 }
                 dispatchGroup.notify(queue: .main) { [weak self] in
                     self?.status = .loaded
-                    print("Héroes cargados")
+//                    print("Héroes cargados")
                     self?.saveCharactersCoreData()
                 }
             }
