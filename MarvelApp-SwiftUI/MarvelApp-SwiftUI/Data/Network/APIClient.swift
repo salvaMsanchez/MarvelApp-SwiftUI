@@ -9,9 +9,9 @@ import Foundation
 
 // MARK: - Constants -
 struct Constants {
-    static let apikey = "4837bc10899562b5f7ebc30e1656c4b9"
+    static let apikey = "<API KEY>"
     static let ts = "1"
-    static let hash = "05418622293818d89a3ede300147d088"
+    static let hash = "<HASH>"
     static let orderBy = "-modified"
 }
 

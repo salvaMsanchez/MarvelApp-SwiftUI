@@ -9,14 +9,11 @@ import SwiftUI
 
 @main
 struct MarvelApp_SwiftUIApp: App {
-//    let persistenceController = PersistenceController.shared
-    
     @StateObject var routeViewModel = RouteViewModel()
 
     var body: some Scene {
         WindowGroup {
             RouteView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(routeViewModel)
         }
     }

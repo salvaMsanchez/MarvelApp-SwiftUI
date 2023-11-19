@@ -7,7 +7,7 @@
 ---
 
 <p align="center">
-  <strong><span style="font-size:20px;">Módulo: iOS superpoderes 🍏</span></strong>
+  <strong><span style="font-size:20px;">Módulo: iOS Superpoderes 🍏</span></strong>
 </p>
 
 ---
@@ -26,11 +26,15 @@
  
 * [Herramientas](#herramientas)
 * [Proyecto: Marvel App 🦸🏻‍♂️ SwiftUI](#proyecto)
+	* [iOS](#ios)
+	* [WatchOS](#watchos)
 	* [Descripción](#descripcion)
 	* [Arquitectura](#arquitectura)
 	* [Diseño](#diseno) 
-	* [Programación reactiva con Combine](#combine)
-	* [Gestión asíncrona con `async/await`](#asincrono)
+	* [Problemas, decisiones y resolución](#problemas)
+		* [Uso de CoreData con SwiftUI](#coredata)
+		* [Utilización de *Routing* para la navegación con un *routeViewModel*](#route)
+	* [Algunos aspectos en los que seguir mejorando la aplicación](#mejoras)
 
 <a name="herramientas"></a>
 ## Herramientas
@@ -71,10 +75,37 @@
 <a name="apikey"></a>
 ### API Key & Hash
 
+Para poder realizar las llamadas a *[The Marvel Comics API](https://developer.marvel.com)*  es necesario seguir los pasos que se indican en la documentación para conseguir la *API Key* y el *Hash*, los cuales debemos introducir en este proyecto en el `struct` llamado `Constants` en **Data > Network > APIClient**.
+
+```swift
+// MARK: - Constants -
+struct Constants {
+    static let apikey = "<API KEY>"
+    static let ts = "1"
+    static let hash = "<HASH>"
+    static let orderBy = "-modified"
+}
+```
+
 <a name="descripcion"></a>
 ### Descripción
 
-Pequeña aplicación iOS para poner en práctica programación reactiva con el *framework* **Combine**; llamadas asíncronas a *[The Marvel Comics API](https://developer.marvel.com)* con **`async/await`**; el uso del patrón de diseño **MVVM** empleando casos de uso conectados con un repositorio (como explico en la sección de [Arquitectura](#arquitectura)) en pos de crear un sistema de *software* escalable, mantenible y testable (arquitectura **CLEAN**); y el acoplamiento de todo lo anterior con el pertinente desarrollo en **UIKit**.
+Aplicación iOS como proyecto final del módulo *iOS Superpoderes* del *Bootcamp en Desarrollo de Apps Móviles* de [KeepCoding](https://keepcoding.io), donde se nos ha propuesto seguir la arquitectura MVVM con SwiftUI y consumir datos de *[The Marvel Comics API](https://developer.marvel.com)*, teniendo en cuenta los siguientes requisitos:
+
+* Obligatorios:
+	* Usar SwiftUI
+	* Usar Combine
+	* Alcanzar un 50% mínimo de cobertura respecto a las pruebas unitarias.
+	* Pantallas: listado de héroes y detalle de cada uno mostrando las series en las que aparece.
+* Opcionales:
+	* Agregar pantallas de carga.
+	* Uso de `Async/Await` en vez de Combine.
+
+Cabe destacar que me he decantado por el **uso de asincronía con `Async/Await` ya que permite una adecuada integración para la consecución de los principios *SOLID* a través del uso de protocolos, casos de uso, *repository*, etc.**, tal y como explico en la sección de [Arquitectura](#arquitectura).
+
+Hasta el momento, **el uso del *framework* Combine lo veo muy útil para implementar programación reactiva en UIKit** para gestión de estados, establecimiento de observadores en variables, *bindings*, etc. Un ejemplo de ello es el **proyecto [Marvel App 🦸🏻‍♂️ UIKit + Combine](https://github.com/salvaMsanchez/MarvelApp-UIKit-Combine)** albergado en mi [GitHub](https://github.com/salvaMsanchez).
+
+ para poner en práctica programación reactiva con el *framework* **Combine**; llamadas asíncronas a *[The Marvel Comics API](https://developer.marvel.com)* con **`async/await`**; el uso del patrón de diseño **MVVM** empleando casos de uso conectados con un repositorio (como explico en la sección de [Arquitectura](#arquitectura)) en pos de crear un sistema de *software* escalable, mantenible y testable (arquitectura **CLEAN**); y el acoplamiento de todo lo anterior con el pertinente desarrollo en **UIKit**.
 
 <a name="arquitectura"></a>
 ### Arquitectura
@@ -102,7 +133,7 @@ Debemos destacar el rol del ***respository***, el cual es el responsable de mane
 <a name="diseno"></a>
 ### Diseño
 
-Como inspiración, he partido del **[concepto creativo y prototipo](https://dribbble.com/shots/2671572-Marvel-App/attachments/537660?mode=media)** del usuario llamado [Luis Herrero](https://dribbble.com/luisherrero) encontrado en la web [Dribbble](https://dribbble.com), punto de partida que me ha ayudado para comenzar este proyecto.
+Como inspiración, he partido del **[concepto creativo y prototipo](https://github.com/salvaMsanchez/ux-ui-bootcamp)** que desarrollé en **Figma** como proyecto final del módulo *UX móvil & diseño de UI* del *Bootcamp en Desarrollo de Apps Móviles*, punto de partida que me ha ayudado para comenzar a desarrollar este proyecto.
 
 <a name="combine"></a>
 ### Programación reactiva con Combine
@@ -114,30 +145,48 @@ He empleado el *framework* **Combine** para gestionar flujos de datos asíncrono
 
 Se han implementado llamadas asíncronas utilizando las funciones `async` y `await`. Esta característica, introducida en ***Swift 5.5***, me ha posibilitado **simplificar la escritura** de código asíncrono al permitir que las funciones asíncronas se vean y se utilicen de manera similar a las funciones síncronas. Además, al emplear `async/await`, las operaciones asíncronas se desarrollan de manera más clara y concisa, mejorando la legibilidad del código.
 
-# TODO
+<a name="problemas"></a>
+### Problemas, decisiones y resolución
 
-* Test
-* QUITAR API KEY!!!!!!
+<a name="coredata"></a>
+#### Uso de CoreData con SwiftUI
 
-# NOTAS SOBRE QUÉ ESCRIBIR
+Cuando construyes un proyecto con SwiftUI y CoreData para persistir datos, Xcode ya te incluye en el ciclo de vida del proyecto el `persistenceController` como variable de entorno para que se pueda usar en cualquier vista directamente.
 
-* [iOS 16 not responding to changes in section spacing](https://www.reddit.com/r/SwiftUI/comments/xia4sv/ios_16_not_responding_to_changes_in_section/?rdt=63091)
-* [ListStyle](https://sarunw.com/posts/swiftui-list-style/)
-* [SwiftUI NavigationLink Hide Arrow Indicator on List](https://thinkdiff.net/swiftui-navigationlink-hide-arrow-indicator-on-list-b842bcb78c79)
-* [A Guide to Utilize Lottie Animations in SwiftUI watchOS](https://medium.com/@achmadsyarieft/a-guide-to-utilize-lottie-animations-in-swiftui-watchos-b76e07524700)
-* [iOS Share CoreData with Extension and App Groups](https://medium.com/@pietromessineo/ios-share-coredata-with-extension-and-app-groups-69f135628736)
-* Solo CoreData para la liista de héroes.
-* Habalar sobre la utilidad del routeViewModel y que aquí podría ser omitido pero que no se ha hehco así ya que es buena práctica por si el proyecto crece en un futuro y se agregan funcionalidades como el login, el logout, etc., de las cuales se ocuparía el routeViewModel.
+Sin embargo, he optado por realizar las llamadas a CoreData al igual que lo haría con una API, dejando la responsabilidad de ello al *repository* en la arquitectura que desarrollo. De esta forma, y como ya se ha comentado en el la sección de [Arquitectura](#arquitectura), conseguimos **separar responsabilidades, reducir la lógica de negocio, facilitar las pruebas unitarias y reutilizar el código**.
 
-# Mejoras a implementar
+Aquello que no he podido conseguir en relación a CoreData ha sido la **conectividad y sincronía de los datos persistidos en memoria entre la aplicación iOS y la WatchOS**. Estuve realizando búsquedas sobre ello, pero su implementación requería de más tiempo, por lo que representa un tema pendiente de estudio. Pienso que este artículo titulado [iOS Share CoreData with Extension and App Groups](https://medium.com/@pietromessineo/ios-share-coredata-with-extension-and-app-groups-69f135628736) del autor [Pietro Messineo](https://medium.com/@pietromessineo) podría ser un buen punto de partida para su debida investigación.
 
-* CoreData para lista de series
-* Detalle para series ya que el texto queda mal a nivel diseño y no se lee, tanto para móvil como para reloj
-* Implementar conectividad entre móvil y reloj
+<a name="route"></a>
+#### Utilización de *Routing* para la navegación con un *routeViewModel*
 
+Aunque en un principio puede parecer innecesario en un proyecto simple, su inclusión se basa en las **buenas prácticas de desarrollo y la planificación para el crecimiento futuro del proyecto**.
+
+Para entenderlo, debemos exponer que un `RouteViewModel` se trata de una abstracción que se encarga de manejar la navegación dentro de la aplicación. Su utilidad principal radica en **simplificar y desacoplar la lógica de navegación del resto de la aplicación**. Esto permite una mayor modularidad y facilita la expansión y mantenimiento del código a medida que el proyecto evoluciona.
+
+Así, y como ya he mencionado, la inclusión de un `RouteViewModel` puede parecer innecesaria en un proyecto como este; sin embargo, su adopción se justifica por la **visión a largo plazo** y el deseo de **mantener un código limpio y escalable**. Este enfoque proactivo sienta las bases para futuras expansiones y la incorporación de características más avanzadas, como el manejo de sesiones de usuario y otras funcionalidades complejas.
+
+#### Ocultar el indicador de flecha en `List`
+
+Para ser fiel al concepto creativo del que partía para el diseño, debía ocultar el `chevron` predeterminado que aparece en las `List` cuando usamos `NavigationLink`.
+
+Después de realizar varias búsquedas, me encontré el magnífico artículo titulado [SwiftUI NavigationLink Hide Arrow Indicator on List](https://thinkdiff.net/swiftui-navigationlink-hide-arrow-indicator-on-list-b842bcb78c79) del autor [Mahmud Ahsan](https://mahmudahsan.medium.com), donde detalla cómo hacerlo en diversas versiones del sistema operativo iOS y, además, aquellos problemas que pueden surgir.
+
+#### Uso de animaciones Lottie en WatchOS con SwiftUI
+
+Sorpresa fue la mía cuando la implementación de las animaciones Lottie en WatchOS no se realizaba de la misma que lo estaba haciendo para iOS. Representó un quebradero de cabeza hasta que encontré el artículo titulado [A Guide to Utilize Lottie Animations in SwiftUI watchOS](https://medium.com/@achmadsyarieft/a-guide-to-utilize-lottie-animations-in-swiftui-watchos-b76e07524700) del autor [Achmad Syarief Thalib](https://medium.com/@achmadsyarieft), donde explica paso a paso cómo podemos conseguir manipular de forma exitosa animaciones Lottie para WatchOS.
+
+<a name="mejoras"></a>
+## Algunos aspectos en los que seguir mejorando la aplicación
+
+* **CoreData para Series:** utilizar CoreData para gestionar eficientemente la información de las series en la aplicación, facilitando la manipulación y recuperación de datos.
+* **Pantalla de Detalle para Series:** con el fin de mejorar la legibilidad y diseño mediante un diseño responsive, tamaños de texto dinámicos, organización en tarjetas, y el uso de imágenes y multimedia.
+* **Implementar conectividad entre móvil y reloj:** sincronización de datos y garantizar seguridad para lograr una interacción fluida entre dispositivos móviles y relojes inteligentes.
 
 ---
 
 [Subir ⬆️](#top)
 
 ---
+
+
