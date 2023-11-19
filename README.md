@@ -34,6 +34,8 @@
 	* [Problemas, decisiones y resolución](#problemas)
 		* [Uso de CoreData con SwiftUI](#coredata)
 		* [Utilización de *Routing* para la navegación con un *routeViewModel*](#route)
+		* [Ocultar el indicador de flecha en `List`](#chevron)
+		* [Uso de animaciones Lottie en WatchOS con SwiftUI](#lottie)
 	* [Algunos aspectos en los que seguir mejorando la aplicación](#mejoras)
 
 <a name="herramientas"></a>
@@ -65,12 +67,12 @@
 <a name="ios"></a>
 ### iOS
 
-![Demo app gif](images/demoApp.gif)
+![Demo app iOS gif](images/demoAppiOS.gif)
 
 <a name="watchos"></a>
 ### WatchOS
 
-![Demo app gif](images/demoApp.gif)
+![Demo app WatchOS gif](images/demoAppWatchOS.gif)
 
 <a name="apikey"></a>
 ### API Key & Hash
@@ -166,12 +168,14 @@ Para entenderlo, debemos exponer que un `RouteViewModel` se trata de una abstrac
 
 Así, y como ya he mencionado, la inclusión de un `RouteViewModel` puede parecer innecesaria en un proyecto como este; sin embargo, su adopción se justifica por la **visión a largo plazo** y el deseo de **mantener un código limpio y escalable**. Este enfoque proactivo sienta las bases para futuras expansiones y la incorporación de características más avanzadas, como el manejo de sesiones de usuario y otras funcionalidades complejas.
 
+<a name="chevron"></a>
 #### Ocultar el indicador de flecha en `List`
 
 Para ser fiel al concepto creativo del que partía para el diseño, debía ocultar el `chevron` predeterminado que aparece en las `List` cuando usamos `NavigationLink`.
 
 Después de realizar varias búsquedas, me encontré el magnífico artículo titulado [SwiftUI NavigationLink Hide Arrow Indicator on List](https://thinkdiff.net/swiftui-navigationlink-hide-arrow-indicator-on-list-b842bcb78c79) del autor [Mahmud Ahsan](https://mahmudahsan.medium.com), donde detalla cómo hacerlo en diversas versiones del sistema operativo iOS y, además, aquellos problemas que pueden surgir.
 
+<a name="lottie"></a>
 #### Uso de animaciones Lottie en WatchOS con SwiftUI
 
 Sorpresa fue la mía cuando la implementación de las animaciones Lottie en WatchOS no se realizaba de la misma que lo estaba haciendo para iOS. Representó un quebradero de cabeza hasta que encontré el artículo titulado [A Guide to Utilize Lottie Animations in SwiftUI watchOS](https://medium.com/@achmadsyarieft/a-guide-to-utilize-lottie-animations-in-swiftui-watchos-b76e07524700) del autor [Achmad Syarief Thalib](https://medium.com/@achmadsyarieft), donde explica paso a paso cómo podemos conseguir manipular de forma exitosa animaciones Lottie para WatchOS.
