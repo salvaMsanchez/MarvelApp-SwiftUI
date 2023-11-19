@@ -23,8 +23,12 @@ struct SplashView: View {
                 #if os(watchOS)
                 LottieWatchOSView()
                 #else
-                LottieView(filename: "marvelSplashAnimation")
-                    .frame(width: 300, height: 300)
+                ZStack {
+                    Color.customBackground
+                        .edgesIgnoringSafeArea(.all)
+                    LottieView(filename: "marvelSplashAnimation")
+                }
+                
                 #endif
             case .loaded:
                 let _ = print("Estado Splash .loaded")

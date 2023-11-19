@@ -13,7 +13,7 @@ struct NoFavoriteCharactersView: View {
     var body: some View {
         Rectangle()
             .frame(height: 200)
-            .foregroundColor(.gray)
+            .foregroundColor(Color.customFavorite)
             .overlay(
                 VStack(spacing: 16) {
                     // Image
@@ -22,6 +22,7 @@ struct NoFavoriteCharactersView: View {
                         .frame(width: 50, height: 50)
                     // Text
                     Text("No favorite characters saved yet")
+                        .foregroundColor(Color.customText)
                 }
             )
     }

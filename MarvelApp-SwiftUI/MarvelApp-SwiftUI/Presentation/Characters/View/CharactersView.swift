@@ -36,6 +36,7 @@ struct CharactersView: View {
                                 } label: {
                                     FavoriteCharacterCardWatchOSView(photo: characterPhoto, characterName: character.name)
                                 }
+                                .listRowBackground(Color.customBackground)
                             }
                         } else {
                             // Characters List
@@ -53,6 +54,7 @@ struct CharactersView: View {
                                         CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index, height: 175, fontSize: 18, heartSize: 24)
                                     }
                                 }
+                                .listRowBackground(Color.customBackground)
                             }
                         }
                     }
@@ -77,13 +79,15 @@ struct CharactersView: View {
                                         } label: {
                                             FavoriteCharacterCardView(photo: characterPhoto, characterName: character.name)
                                         }
+//                                        .listRowBackground(Color.customBackground)
                                     }
                                 }
                                 .padding([.leading, .trailing], 16)
 //                                .background(.blue)
                             }
                             .frame(height: 200)
-//                            .background(.red)
+                            .background(Color.customBackground)
+                            .scrollContentBackground(.hidden)
                         }
                     }
                     .listRowSeparator(.hidden)
@@ -103,12 +107,13 @@ struct CharactersView: View {
                                 CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index, height: 275, fontSize: 32, heartSize: 28)
                             }
                         }
+                        .listRowBackground(Color.customBackground)
                     }
                 }
-//                .background(.green)
+                .background(Color.customBackground)
                 .scrollIndicators(.hidden)
                 .listStyle(.grouped)
-//                .scrollContentBackground(.hidden)
+                .scrollContentBackground(.hidden)
                 #endif
                 switch viewModel.status {
                     case .loading:

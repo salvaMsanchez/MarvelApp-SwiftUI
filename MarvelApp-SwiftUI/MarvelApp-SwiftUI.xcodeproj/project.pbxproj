@@ -27,6 +27,8 @@
 		B41B2CB62B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */; };
 		B41B2CBB2B03B1A8008D57D1 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */; };
 		B41B2CBD2B03B1B5008D57D1 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */; };
+		B436AE2E2B0995FF00987410 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436AE2D2B0995FF00987410 /* Extension+Color.swift */; };
+		B436AE2F2B09994F00987410 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436AE2D2B0995FF00987410 /* Extension+Color.swift */; };
 		B495D32A2B07CA760004CB53 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */; };
 		B495D32C2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */; };
 		B495D32E2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */; };
@@ -153,6 +155,7 @@
 		B41B2CB52B03A2C6008D57D1 /* APIClientRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientRepositoryProtocol.swift; sourceTree = "<group>"; };
 		B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
+		B436AE2D2B0995FF00987410 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		B4903A0D2B0675B100FCDACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerUseCase.swift; sourceTree = "<group>"; };
@@ -357,6 +360,7 @@
 		B41B2CA02B03A11B008D57D1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B436AE2C2B0995D700987410 /* Extensions */,
 				B4ABA9152B04069100CB3315 /* GeneralViews */,
 				B4B7667E2B0543E20096544D /* Routing */,
 				B4ABA90E2B04059B00CB3315 /* Splash */,
@@ -462,6 +466,14 @@
 				B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B436AE2C2B0995D700987410 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B436AE2D2B0995FF00987410 /* Extension+Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B495D3312B07D97B0004CB53 /* Mapper */ = {
@@ -795,6 +807,7 @@
 				B4B766882B0559A00096544D /* LoadingView.swift in Sources */,
 				B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */,
 				B49E1C1E2B094461009F9E7D /* LottieViewModel.swift in Sources */,
+				B436AE2E2B0995FF00987410 /* Extension+Color.swift in Sources */,
 				B49E1C242B094534009F9E7D /* LoadingWatchOSView.swift in Sources */,
 				B4AF5E712B08CF90001BAF26 /* CharacterCardView.swift in Sources */,
 				B4B766822B0544100096544D /* RouteView.swift in Sources */,
@@ -851,6 +864,7 @@
 				B49E1C0A2B09381A009F9E7D /* Persistence.swift in Sources */,
 				B49E1C232B0944EB009F9E7D /* LoadingWatchOSView.swift in Sources */,
 				B49E1C0E2B093878009F9E7D /* CharacterCardView.swift in Sources */,
+				B436AE2F2B09994F00987410 /* Extension+Color.swift in Sources */,
 				B49E1BFE2B09375E009F9E7D /* CharactersViewModel.swift in Sources */,
 				B49E1C102B09387E009F9E7D /* NoFavoriteCharactersView.swift in Sources */,
 				B49E1C052B0937F1009F9E7D /* APIClientRepository.swift in Sources */,

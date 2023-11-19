@@ -41,7 +41,7 @@ struct FavoriteCharacterCardView: View {
                 .frame(width: 100, alignment: .leading)
                 .lineLimit(1)
                 .font(.system(size: 14))
-                .foregroundColor(.white)
+                .foregroundColor(Color.customText)
         }
     }
 }

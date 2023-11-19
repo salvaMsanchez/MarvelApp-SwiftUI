@@ -22,9 +22,12 @@ struct CharacterSeriesView: View {
                 ForEach(viewModel.series) { serie in
                     let seriePhoto: String = "\(serie.thumbnail.path).\(serie.thumbnail.thumbnailExtension)"
                     SerieCardView(photo: seriePhoto, serieTitle: serie.title, serieDescription: serie.description, height: height, fontSize: fontSize)
+                        .listRowBackground(Color.customBackground)
                 }
             }
+            .background(Color.customBackground)
             .scrollIndicators(.hidden)
+            .scrollContentBackground(.hidden)
             switch viewModel.status {
                 case .loading:
                     let _ = print("Estado Series .loading")
