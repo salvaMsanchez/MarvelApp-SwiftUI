@@ -58,7 +58,18 @@
 <a name="proyecto"></a>
 ## Proyecto: Marvel App 🦸🏻‍♂️ SwiftUI
 
+<a name="ios"></a>
+### iOS
+
 ![Demo app gif](images/demoApp.gif)
+
+<a name="watchos"></a>
+### WatchOS
+
+![Demo app gif](images/demoApp.gif)
+
+<a name="apikey"></a>
+### API Key & Hash
 
 <a name="descripcion"></a>
 ### Descripción
@@ -105,11 +116,8 @@ Se han implementado llamadas asíncronas utilizando las funciones `async` y `awa
 
 # TODO
 
-* Separar vistas en subvistas para más organización
-* Comentar código
-* Adaptación a SmartWatch
-* Dirigir a SeriesView desde Favoritos
 * Test
+* QUITAR API KEY!!!!!!
 
 # NOTAS SOBRE QUÉ ESCRIBIR
 

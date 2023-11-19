@@ -90,6 +90,8 @@
 		B4B766842B05441D0096544D /* RouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766832B05441D0096544D /* RouteViewModel.swift */; };
 		B4B766862B0545A50096544D /* RoutingStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766852B0545A50096544D /* RoutingStatus.swift */; };
 		B4B766882B0559A00096544D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B766872B0559A00096544D /* LoadingView.swift */; };
+		B4EF37DF2B0A252100DBC040 /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EF37DE2B0A252100DBC040 /* CharacterTests.swift */; };
+		B4EF37E12B0A279100DBC040 /* SDWebImageLottieCoder in Frameworks */ = {isa = PBXBuildFile; productRef = B4EF37E02B0A279100DBC040 /* SDWebImageLottieCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +184,7 @@
 		B4B766832B05441D0096544D /* RouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewModel.swift; sourceTree = "<group>"; };
 		B4B766852B0545A50096544D /* RoutingStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingStatus.swift; sourceTree = "<group>"; };
 		B4B766872B0559A00096544D /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B4EF37DE2B0A252100DBC040 /* CharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4EF37E12B0A279100DBC040 /* SDWebImageLottieCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 		B41B2C822B039DB3008D57D1 /* MarvelApp-SwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
+				B4EF37DC2B0A24C100DBC040 /* Domain */,
 				B41B2C832B039DB3008D57D1 /* MarvelApp_SwiftUITests.swift */,
 			);
 			path = "MarvelApp-SwiftUITests";
@@ -620,6 +625,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B4EF37DC2B0A24C100DBC040 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B4EF37DD2B0A24CE00DBC040 /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B4EF37DD2B0A24CE00DBC040 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4EF37DE2B0A252100DBC040 /* CharacterTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -657,9 +678,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				B4EF37E32B0A279A00DBC040 /* PBXTargetDependency */,
 				B41B2C812B039DB3008D57D1 /* PBXTargetDependency */,
 			);
 			name = "MarvelApp-SwiftUITests";
+			packageProductDependencies = (
+				B4EF37E02B0A279100DBC040 /* SDWebImageLottieCoder */,
+			);
 			productName = "MarvelApp-SwiftUITests";
 			productReference = B41B2C7F2B039DB3008D57D1 /* MarvelApp-SwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -840,6 +865,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41B2C842B039DB3008D57D1 /* MarvelApp_SwiftUITests.swift in Sources */,
+				B4EF37DF2B0A252100DBC040 /* CharacterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,6 +935,10 @@
 			isa = PBXTargetDependency;
 			target = B49E1BE02B0925D6009F9E7D /* WatchOSMarvel Watch App */;
 			targetProxy = B49E1BEC2B0925D7009F9E7D /* PBXContainerItemProxy */;
+		};
+		B4EF37E32B0A279A00DBC040 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B4EF37E22B0A279A00DBC040 /* SDWebImageLottieCoder */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1339,6 +1369,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B4ABA90B2B04057500CB3315 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		B4EF37E02B0A279100DBC040 /* SDWebImageLottieCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49E1C152B093F57009F9E7D /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */;
+			productName = SDWebImageLottieCoder;
+		};
+		B4EF37E22B0A279A00DBC040 /* SDWebImageLottieCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B49E1C152B093F57009F9E7D /* XCRemoteSwiftPackageReference "SDWebImageLottieCoder" */;
+			productName = SDWebImageLottieCoder;
 		};
 /* End XCSwiftPackageProductDependency section */
 
