@@ -10,7 +10,6 @@ import XCTest
 @testable import MarvelApp_SwiftUI
 
 final class CharacterTests: XCTestCase {
-    
     func testCharacterInitialization() {
         let characterId = 1009368
         let characterName = "Iron Man"
@@ -37,7 +36,9 @@ final class CharacterTests: XCTestCase {
         let characterPath = "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55"
         let characterExtension = Extension.jpg
         let characterThumbnail = CharacterThumbnail(path: characterPath, thumbnailExtension: characterExtension)
+        
         let character = Character(id: characterId, name: characterName, description: characterDescription, thumbnail: characterThumbnail, favorite: false)
+        XCTAssertNotNil(character)
         
         let characters: Characters = [character]
         XCTAssertNotNil(characters)
@@ -53,5 +54,4 @@ final class CharacterTests: XCTestCase {
         XCTAssertEqual(characterResults.characters.first?.thumbnail.thumbnailExtension, characterExtension)
         XCTAssertEqual(characterResults.characters.first?.favorite, false)
     }
-    
 }
