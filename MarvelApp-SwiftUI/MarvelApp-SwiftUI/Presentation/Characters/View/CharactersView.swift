@@ -36,7 +36,7 @@ struct CharactersView: View {
                                 } label: {
                                     FavoriteCharacterCardWatchOSView(photo: characterPhoto, characterName: character.name)
                                 }
-                                .listRowBackground(Color.customBackground)
+                                .listRowBackground(Color.black)
                             }
                         } else {
                             // Characters List
@@ -54,7 +54,7 @@ struct CharactersView: View {
                                         CharacterCardView(viewModel: viewModel, photo: characterPhoto, characterName: character.name, characterFavorite: character.favorite, index: index, height: 175, fontSize: 18, heartSize: 24)
                                     }
                                 }
-                                .listRowBackground(Color.customBackground)
+                                .listRowBackground(Color.black)
                             }
                         }
                     }
