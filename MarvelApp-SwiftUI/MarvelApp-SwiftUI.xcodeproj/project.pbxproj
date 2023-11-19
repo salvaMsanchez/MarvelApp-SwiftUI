@@ -28,6 +28,7 @@
 		B41B2CBD2B03B1B5008D57D1 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */; };
 		B436AE2E2B0995FF00987410 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436AE2D2B0995FF00987410 /* Extension+Color.swift */; };
 		B436AE2F2B09994F00987410 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436AE2D2B0995FF00987410 /* Extension+Color.swift */; };
+		B445052E2B0A5B800003E93C /* DataPersistanceManagerUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B445052D2B0A5B800003E93C /* DataPersistanceManagerUseCaseTests.swift */; };
 		B495D32A2B07CA760004CB53 /* DataPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */; };
 		B495D32C2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */; };
 		B495D32E2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B495D32D2B07CF0B0004CB53 /* DataPersistanceManagerRepositoryProtocol.swift */; };
@@ -159,6 +160,7 @@
 		B41B2CBA2B03B1A8008D57D1 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
 		B41B2CBC2B03B1B5008D57D1 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		B436AE2D2B0995FF00987410 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		B445052D2B0A5B800003E93C /* DataPersistanceManagerUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerUseCaseTests.swift; sourceTree = "<group>"; };
 		B4903A0D2B0675B100FCDACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B495D3292B07CA760004CB53 /* DataPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManager.swift; sourceTree = "<group>"; };
 		B495D32B2B07CE6A0004CB53 /* DataPersistanceManagerUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistanceManagerUseCase.swift; sourceTree = "<group>"; };
@@ -654,6 +656,7 @@
 			isa = PBXGroup;
 			children = (
 				B4EF37E72B0A326700DBC040 /* APIClientUseCaseTests.swift */,
+				B445052D2B0A5B800003E93C /* DataPersistanceManagerUseCaseTests.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -916,6 +919,7 @@
 				B4EF37E52B0A2E3A00DBC040 /* SerieTests.swift in Sources */,
 				B4EF37EE2B0A3CA800DBC040 /* CharactersViewModelTests.swift in Sources */,
 				B41B2C842B039DB3008D57D1 /* MarvelApp_SwiftUITests.swift in Sources */,
+				B445052E2B0A5B800003E93C /* DataPersistanceManagerUseCaseTests.swift in Sources */,
 				B4EF37DF2B0A252100DBC040 /* CharacterTests.swift in Sources */,
 				B4EF37E82B0A326700DBC040 /* APIClientUseCaseTests.swift in Sources */,
 			);
