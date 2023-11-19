@@ -34,7 +34,7 @@ final class APIClientUseCase: APIClientUseCaseProtocol {
     }
 }
 
-//esta clase nos vale para diseño de UI de UIKIt y SwiftUI y Testing.
+// Class for UI design and testing
 final class APIClientUseCaseFakeSuccess: APIClientUseCaseProtocol{
     // MARK: - Properties -
     var repository: APIClientRepositoryProtocol
