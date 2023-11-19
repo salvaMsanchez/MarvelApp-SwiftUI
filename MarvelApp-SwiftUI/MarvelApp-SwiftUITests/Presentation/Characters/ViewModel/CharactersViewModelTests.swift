@@ -13,7 +13,7 @@ final class CharactersViewModelTests: XCTestCase {
     private var sut: CharactersViewModel!
     
     override func setUp() {
-        sut = CharactersViewModel(testing: true, useCase: APIClientUseCaseFakeSuccess(), coreDataUseCase: DataPersistanceManagerUseCase())
+        sut = CharactersViewModel(testing: true, apiClientUseCase: APIClientUseCaseFakeSuccess(), coreDataUseCase: DataPersistanceManagerUseCase())
     }
     
     override func setUpWithError() throws {

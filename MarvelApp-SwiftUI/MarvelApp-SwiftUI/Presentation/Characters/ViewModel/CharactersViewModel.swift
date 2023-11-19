@@ -36,12 +36,12 @@ final class CharactersViewModel: ObservableObject {
     }
     
     // MARK: - Use Case -
-    let useCase: APIClientUseCaseProtocol
+    let apiClientUseCase: APIClientUseCaseProtocol
     let coreDataUseCase: DataPersistanceManagerUseCaseProtocol
     
     // MARK: - Initializers -
-    init(testing: Bool = false, useCase: APIClientUseCaseProtocol = APIClientUseCase(), coreDataUseCase: DataPersistanceManagerUseCaseProtocol = DataPersistanceManagerUseCase()) {
-        self.useCase = useCase
+    init(testing: Bool = false, apiClientUseCase: APIClientUseCaseProtocol = APIClientUseCase(), coreDataUseCase: DataPersistanceManagerUseCaseProtocol = DataPersistanceManagerUseCase()) {
+        self.apiClientUseCase = apiClientUseCase
         self.coreDataUseCase = coreDataUseCase
         
         if testing {
@@ -92,7 +92,6 @@ final class CharactersViewModel: ObservableObject {
         status = .loading
         
         let charactersSavedOnCoreData: Characters = fetchingCharactersCoreData()
-        print("CONTADOR EN COREDATA -> \(charactersSavedOnCoreData.count)")
         
         if charactersSavedOnCoreData.count > 0 {
             defer {
@@ -103,11 +102,6 @@ final class CharactersViewModel: ObservableObject {
                 }
             }
             characters = charactersSavedOnCoreData
-//            print("!!!!!!!!!!!!!")
-//            print("!!!!!!!!!!!!!")
-//            print(characters)
-//            print("!!!!!!!!!!!!!")
-//            print("!!!!!!!!!!!!!")
         } else {
             DispatchQueue.global().async { [weak self] in
                 let dispatchGroup = DispatchGroup()
@@ -118,7 +112,7 @@ final class CharactersViewModel: ObservableObject {
                             dispatchGroup.leave()
                         }
                         do {
-                            guard let character = try await self?.useCase.getCharacter(by: nameCharacter, apiRouter: .getCharacter) else {
+                            guard let character = try await self?.apiClientUseCase.getCharacter(by: nameCharacter, apiRouter: .getCharacter) else {
                                 return
                             }
                             DispatchQueue.main.async { [weak self] in
@@ -131,7 +125,6 @@ final class CharactersViewModel: ObservableObject {
                 }
                 dispatchGroup.notify(queue: .main) { [weak self] in
                     self?.status = .loaded
-//                    print("Héroes cargados")
                     self?.saveCharactersCoreData()
                 }
             }
@@ -174,7 +167,7 @@ final class CharactersViewModel: ObservableObject {
             dispatchGroup.enter()
             Task.init { [weak self] in
                 do {
-                    guard let character = try await self?.useCase.getCharacter(by: "", apiRouter: .getCharacter) else {
+                    guard let character = try await self?.apiClientUseCase.getCharacter(by: "", apiRouter: .getCharacter) else {
                         dispatchGroup.leave()
                         return
                     }

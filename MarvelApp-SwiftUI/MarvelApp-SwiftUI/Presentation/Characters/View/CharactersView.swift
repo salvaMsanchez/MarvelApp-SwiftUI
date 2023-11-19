@@ -138,6 +138,6 @@ struct CharactersView: View {
 
 struct CharactersView_Previews: PreviewProvider {
     static var previews: some View {
-        CharactersView(viewModel: CharactersViewModel(testing: true, useCase: APIClientUseCaseFakeSuccess()))
+        CharactersView(viewModel: CharactersViewModel(testing: true, apiClientUseCase: APIClientUseCaseFakeSuccess()))
     }
 }

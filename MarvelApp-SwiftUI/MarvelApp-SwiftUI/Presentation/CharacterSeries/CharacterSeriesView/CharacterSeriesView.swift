@@ -50,6 +50,6 @@ struct CharacterSeriesView: View {
 
 struct CharacterSeriesView_Previews: PreviewProvider {
     static var previews: some View {
-        CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: true, useCase: APIClientUseCaseFakeSuccess(), character: .init(id: 1, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))), height: 390, fontSize: 28)
+        CharacterSeriesView(viewModel: CharacterSeriesViewModel(testing: true, apiClientUseCase: APIClientUseCaseFakeSuccess(), character: .init(id: 1, name: "", description: "", thumbnail: .init(path: "", thumbnailExtension: .jpg))), height: 390, fontSize: 28)
     }
 }

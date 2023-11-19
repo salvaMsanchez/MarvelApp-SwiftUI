@@ -20,11 +20,11 @@ final class CharacterSeriesViewModel: ObservableObject {
     var character: Character
     
     // MARK: - Use Case -
-    let useCase: APIClientUseCaseProtocol
+    let apiClientUseCase: APIClientUseCaseProtocol
     
     // MARK: - Initializers -
-    init(testing: Bool, useCase: APIClientUseCaseProtocol = APIClientUseCase(), character: Character) {
-        self.useCase = useCase
+    init(testing: Bool, apiClientUseCase: APIClientUseCaseProtocol = APIClientUseCase(), character: Character) {
+        self.apiClientUseCase = apiClientUseCase
         self.character = character
         
         if testing {
@@ -44,7 +44,7 @@ final class CharacterSeriesViewModel: ObservableObject {
                     guard let characterId = self?.character.id else {
                         return
                     }
-                    guard let series = try await self?.useCase.getSeries(by: characterId, apiRouter: .getSeries(characterId: characterId)) else {
+                    guard let series = try await self?.apiClientUseCase.getSeries(by: characterId, apiRouter: .getSeries(characterId: characterId)) else {
                         return
                     }
                     let seriesFiltered = series.filter { $0.description != nil }
@@ -63,7 +63,7 @@ final class CharacterSeriesViewModel: ObservableObject {
     func loadSeriesTesting() {
         Task.init { [weak self] in
             do {
-                guard let series = try await self?.useCase.getSeries(by: 0, apiRouter: .getSeries(characterId: 0)) else {
+                guard let series = try await self?.apiClientUseCase.getSeries(by: 0, apiRouter: .getSeries(characterId: 0)) else {
                     return
                 }
                 
