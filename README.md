@@ -93,7 +93,7 @@ struct Constants {
 <a name="descripcion"></a>
 ### Descripción
 
-Aplicación iOS como proyecto final del módulo *iOS Superpoderes* del *Bootcamp en Desarrollo de Apps Móviles* de [KeepCoding](https://keepcoding.io), donde se nos ha propuesto seguir la arquitectura MVVM con SwiftUI y consumir datos de *[The Marvel Comics API](https://developer.marvel.com)*, teniendo en cuenta los siguientes requisitos:
+Aplicación iOS como proyecto final del módulo *iOS Superpoderes* del *Bootcamp en Desarrollo de Apps Móviles* de [KeepCoding](https://keepcoding.io), donde se nos ha propuesto seguir el **patrón de diseño MVVM con SwiftUI** y consumir datos de *[The Marvel Comics API](https://developer.marvel.com)*, teniendo en cuenta los siguientes requisitos:
 
 * Obligatorios:
 	* Usar SwiftUI.
@@ -104,7 +104,7 @@ Aplicación iOS como proyecto final del módulo *iOS Superpoderes* del *Bootcamp
 	* Agregar pantallas de carga.
 	* Uso de `Async/Await` en vez de Combine.
 
-Cabe destacar que me he decantado por el **uso de asincronía con `Async/Await` ya que permite una adecuada integración para la consecución de los principios *SOLID* a través del uso de protocolos, casos de uso, *repository*, etc.**, tal y como explico en la sección de [Arquitectura](#arquitectura).
+Cabe destacar que me he decantado por el **uso de asincronía con `Async/Await` ya que permite una adecuada integración para la consecución óptima de una arquitectura *CLEAN* a través del uso de protocolos, casos de uso, *repository*, etc.**, tal y como explico en la sección de [Arquitectura](#arquitectura).
 
 Hasta el momento, **el uso del *framework* Combine lo veo muy útil para implementar programación reactiva en UIKit** para gestión de estados, establecimiento de observadores en variables, *bindings*, etc. Un ejemplo de ello es el **proyecto [Marvel App 🦸🏻‍♂️ UIKit + Combine](https://github.com/salvaMsanchez/MarvelApp-UIKit-Combine)** albergado en mi [GitHub](https://github.com/salvaMsanchez).
 
